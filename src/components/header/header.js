@@ -5,10 +5,12 @@ import "../../styles/index.sass"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      wordpressSiteMetadata {
-          name
+      site {
+        siteMetadata{
+          title
         }
       }
+    }
     `)
   return (
     <div className="grid">
@@ -36,7 +38,7 @@ const Header = () => {
           <Link to="/" className="logo-area">
             <img src="./Assets/icons/logo.png" alt="" />
             <div className="name">
-              <h1>{data.wordpressSiteMetadata.name}</h1>
+              <h1>{data.site.siteMetadata.title}</h1>
               <h3>Architecture</h3>
               <h3>Buro</h3>
             </div>

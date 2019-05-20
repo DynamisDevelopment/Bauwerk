@@ -6,13 +6,10 @@ module.exports = {
     plugins: [
         'gatsby-plugin-react-helmet',
         {
-            resolve: "gatsby-source-wordpress",
+            resolve: 'gatsby-source-contentful',
             options: {
-                baseUrl: "http://bauwerk.local/",
-                protocal: "http",
-                hostingWPCOM: false,
-                useACF: true,
-                verboseOutput: false
+                spaceId: process.env.CONTENTFUL_SPACE_ID, //from env.development
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
             }
         },
         'gatsby-plugin-sass',
