@@ -10,6 +10,7 @@ import "../styles/index.sass"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import SectionTitle from "../components/sectionTitle/sectionTitle"
+import Contact from "../components/contact/contact"
 
 // Sections
 import Jumbotron from "../sections/home/jumbotron/jumbotron"
@@ -31,7 +32,7 @@ const IndexPage = () => {
             <Offers />
 
             <div className="grid">
-                <SectionTitle />
+                <SectionTitle section={"Services"} title={"Our Professional"} subtitle={"Specializations"} />
                 <Slider {...settings} slidesPerRow={4} className="standard-slider">
                     <a href="#" className="section one">
                         <img src="./Assets/images/header-background.png" alt="" />
@@ -101,11 +102,26 @@ const IndexPage = () => {
             </div>
 
             <div className="grid bg-white">
-                <div className="section-title">
-                    <h1>Portfolio <div className="line"></div></h1>
-                    <h3>Our Latest</h3>
-                    <h3>Projects</h3>
-                </div>
+                <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
+            </div>
+            <div className="grid">
+                <SectionTitle section={"Testimonials"} title={"What"} subtitle={"Clients Say"} />
+            </div>
+            <div className="grid">
+                <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
+            </div>
+            <div className="grid">
+                <SectionTitle section={"Our Team"} title={"Our"} subtitle={"Professional Team"} />
+            </div>
+            <div className="grid bg-white">
+                <SectionTitle section={"Our Partners"} title={"The Best Companies"} subtitle={"Cooperate With Us"} />
+            </div>
+            <div className="grid">
+                <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
+            </div>
+            <div className="grid">
+                <SectionTitle section={"Contact"} title={"Let's Start"} subtitle={"a New Project"} />
+                <Contact />
             </div>
         </Layout>
     )
