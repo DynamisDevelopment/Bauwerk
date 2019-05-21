@@ -120,7 +120,6 @@ const IndexPage = () => {
                 <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
             </div>
             <div className="grid">
-                <SectionTitle section={"Contact"} title={"Let's Start"} subtitle={"a New Project"} />
                 <Contact />
             </div>
         </Layout>
