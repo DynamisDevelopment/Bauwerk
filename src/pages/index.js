@@ -10,6 +10,7 @@ import "../styles/index.sass"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import SectionTitle from "../components/sectionTitle/sectionTitle"
+import Partners from "../components/partners/partners"
 import Contact from "../components/contact/contact"
 
 // Sections
@@ -113,8 +114,8 @@ const IndexPage = () => {
             <div className="grid">
                 <SectionTitle section={"Our Team"} title={"Our"} subtitle={"Professional Team"} />
             </div>
-            <div className="grid bg-white">
-                <SectionTitle section={"Our Partners"} title={"The Best Companies"} subtitle={"Cooperate With Us"} />
+            <div className="grid">
+                <Partners />
             </div>
             <div className="grid">
                 <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
