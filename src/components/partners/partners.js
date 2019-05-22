@@ -34,6 +34,7 @@ const Partners = () => {
                 {data.allContentfulPartners.edges.map(edge => edge.node.clientLogos.map((logo, index) => {
                     return <div className="partner-col" key={index}>
                         <img src={logo.file.url} />
+                        <img src={logo.file.url} />
                     </div>
                 }))}
             </Slider>

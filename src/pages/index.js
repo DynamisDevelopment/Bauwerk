@@ -10,6 +10,7 @@ import "../styles/index.sass"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import SectionTitle from "../components/sectionTitle/sectionTitle"
+import Reviews from "../components/reviews/reviews"
 import Partners from "../components/partners/partners"
 import Contact from "../components/contact/contact"
 
@@ -106,7 +107,7 @@ const IndexPage = () => {
                 <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
             </div>
             <div className="grid">
-                <SectionTitle section={"Testimonials"} title={"What"} subtitle={"Clients Say"} />
+                <Reviews />
             </div>
             <div className="grid">
                 <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
