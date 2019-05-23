@@ -1,2 +1,54 @@
 .reviews-section 
     grid-column: 2 / 3
+
+.reviews-slider 
+    // Layout
+    height: 300px
+    margin-top: 50px
+    display: flex
+    .review-col 
+        // Layout
+        height: 300px
+        display: flex 
+        flex-direction: column
+        justify-content: space-between
+        margin: 0 75px 0 75px
+
+        // Typography
+        font-family: "Roboto"
+        h2 
+            // Layout
+            margin-top: -50px
+
+            // Typography
+            line-height: 30px
+            font-weight: 400
+        .details 
+            // Layout
+            display: flex
+            justify-content: space-between
+            width: 50%
+            img 
+                height: 50px
+                width: 50px
+            .more-details 
+                // Layout
+                display: flex 
+                flex-direction: column 
+                justify-content: space-between
+                height: 50px
+                .name 
+                    // Typography
+                    font-size: 25px
+                    color: $copper
+                .date 
+                    // Typography
+                    font-size: 15px 
+                    color: grey
+    .avatar 
+        // Layout
+        height: 80px
+        width: 80px
+        border-radius: 50%
+    .slick-dots 
+        display: none !important

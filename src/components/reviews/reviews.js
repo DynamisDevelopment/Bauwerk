@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SectionTitle from "../sectionTitle/sectionTitle"
 import Slider from "react-slick"
 
@@ -12,7 +13,7 @@ const Reviews = () => {
                     createdAt(formatString: "MMMM Do, YYYY") 
                     name 
                     reviewContent{
-                    reviewContent
+                         json
                     }
                     avatar {
                     file {
@@ -29,18 +30,26 @@ const Reviews = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        adaptiveHeight: true
     }
     return (
         <div className="reviews-section">
             <SectionTitle section={"Testimonials"} title={"What"} subtitle={"Clients Say"} />
             <Slider {...settings} slidesPerRow={2} className="reviews-slider">
                 {data.allContentfulReviews.edges.map(review => {
-                    return <div className="review-col">
-                        <img src={review.node.avatar.file.url} />
-                        <h2>{review.node.reviewContent.reviewContent}</h2>
-                        <p>{review.node.name}</p>
-                        <p>{review.node.createdAt}</p>
+                    return <div>
+                        <div className="review-col">
+                            <img src={review.node.avatar.file.url} className="avatar" />
+                            <h2>{documentToReactComponents(review.node.reviewContent.json)}</h2>
+                            <div className="details">
+                                <img src="#" />
+                                <div className="more-details">
+                                    <p className="name">{review.node.name}</p>
+                                    <p className="date">{review.node.createdAt}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 })}
             </Slider>

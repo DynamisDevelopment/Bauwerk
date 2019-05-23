@@ -12,6 +12,7 @@ import Head from "../components/head"
 import SectionTitle from "../components/sectionTitle/sectionTitle"
 import Reviews from "../components/reviews/reviews"
 import Partners from "../components/partners/partners"
+import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
 
 // Sections
@@ -107,6 +108,9 @@ const IndexPage = () => {
                 <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
             </div>
             <div className="grid">
+                <SectionTitle section={"Special Offer"} title={"How to save 50%"} subtitle={"of money on repairs"} />
+            </div>
+            <div className="grid">
                 <Reviews />
             </div>
             <div className="grid">
@@ -119,7 +123,7 @@ const IndexPage = () => {
                 <Partners />
             </div>
             <div className="grid">
-                <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
+                <BlogSlider />
             </div>
             <div className="grid">
                 <Contact />
