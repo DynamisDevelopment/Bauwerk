@@ -1,2 +1,58 @@
 .blog-section 
     grid-column: 2 / 3
+    .blog-slider 
+        // Layout
+        margin-top: 50px
+        display: flex
+        align-items: center !important
+        .blog-col
+            // Typography
+            font-family: "Roboto" 
+            img 
+                // Layout
+                height: 270px
+                width: 370px
+            p 
+                // Layout
+                margin-top: 40px
+            h1
+                // Layout
+                margin-top: 30px
+                height: 250px
+                padding-right: 30px
+
+                // Typography
+                font-size: 30px
+                font-weight: 300
+            .read-more
+                // Layout
+                margin-bottom: 100px
+                display: flex
+                align-items: center
+            
+                // Typography
+                color: $copper
+            &:hover 
+                // Typography
+                color: $copper
+            .rarrow 
+                // Layout
+                margin-left: 20px
+                height: 30px
+                width: 50px
+.slick-next 
+    // Typography
+    color: transparent
+    font-size: 40px
+
+    // Misc Styling
+    border: none 
+    background-color: transparent
+    &:after 
+        content: url("../images/arrow.svg")
+        cursor: pointer
+.slick-prev 
+    @extend .slick-next
+    font-size: 25px !important
+    transform: rotate(180deg)
+    margin-left: -40px
