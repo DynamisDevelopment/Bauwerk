@@ -26,7 +26,7 @@ const Team = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesPerRow: 4,
         slidesToScroll: 1
     }
     return (
@@ -34,7 +34,7 @@ const Team = () => {
             <SectionTitle section={"Our Team"} title={"Our"} subtitle={"Professional Team"} />
             <Slider {...settings} className="team-slider">
                 {data.allContentfulTeam.edges.map((edge, index) => {
-                    return <div key={index}>
+                    return <div key={index} className="team-column">
                         <img src={edge.node.image.file.url} />
                         <div className="text-wrapper">
                             <h2>{edge.node.name}</h2>

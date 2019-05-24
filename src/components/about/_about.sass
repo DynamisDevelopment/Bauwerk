@@ -1,0 +1,53 @@
+.about-section 
+    // Layout
+    grid-column: 1 / 4
+
+    // Typography
+    font-family: "Roboto"
+    color: #fff
+.about-row 
+    // Layout
+    grid-column: 2 / 3
+    margin-top: -1900px
+    display: flex
+    width: 100%
+    justify-content: space-around
+    .about-column
+        // Layout
+        display: flex 
+        flex-direction: column 
+        justify-content: space-between
+        height: 500px
+        width: 40%
+        .logo-area 
+            img
+                height: 75px
+                width: 75px
+            .name h1 
+                font-size: 40px
+            .name h3
+                font-size: 20px
+        p
+            // Layout
+            margin-left: 5%
+
+            // Typography
+            line-height: 30px
+    .about-slider 
+        width: 40%
+.about-row-2
+    @extend .about-row
+
+    // Layout
+    grid-column: 2 / 3
+    margin-top: -800px !important
+    .about-column 
+        // Layout
+        margin-top: 100px
+        height: 400px
+        h2 
+            // Typography
+            font-family: "Playfair Display"
+            font-size: 30px
+            font-weight: 600
+            
