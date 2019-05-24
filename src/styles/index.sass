@@ -13,6 +13,7 @@
 @import "../components/sectionTitle/_sectionTitle.sass"
 @import "../components/reviews/_reviews.sass"
 @import "../components/partners/_partners.sass"
+@import "../components/team/_team.sass"
 @import "../components/blogSlider/_blogSlider.sass"
 @import "../components/contact/_contact.sass"
 
@@ -26,6 +27,7 @@ $copper: rgb(157,125,79)
 
 body 
     overflow-x: hidden
+    background-color: #fff
 .grid 
     display: grid 
     grid-template-columns: 15% 70% 15%
@@ -77,6 +79,9 @@ a
     width: 190px
     height: 45px
     border-radius: 30px
+    display: flex 
+    justify-content: space-around
+    align-items: center
 
     // Typography
     font-family: "Roboto"
@@ -87,8 +92,33 @@ a
     // Misc Styling
     border: none
     background-color: $copper
+    img 
+        // Layout
+        height: 15px
+        width: auto
+ 
 
-.rArrow
-    width: 100px
-    height: 10px
-    color: #fff 
+.slick-next //Not sure why sizes are different.
+    // Layout
+    margin-top: -100px
+
+    // Typography
+    color: transparent
+    font-size: 40px
+
+    // Misc Styling
+    border: none 
+    background-color: transparent
+    &:after 
+        content: url("../images/arrow.svg")
+        cursor: pointer
+.slick-prev 
+    @extend .slick-next
+    // Layout
+    transform: rotate(180deg)
+    margin-left: -40px
+    margin: 0 !important
+
+    // Typography
+    font-size: 22px !important
+    

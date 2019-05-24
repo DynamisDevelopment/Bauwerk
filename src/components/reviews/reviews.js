@@ -37,8 +37,8 @@ const Reviews = () => {
         <div className="reviews-section">
             <SectionTitle section={"Testimonials"} title={"What"} subtitle={"Clients Say"} />
             <Slider {...settings} slidesPerRow={2} className="reviews-slider">
-                {data.allContentfulReviews.edges.map(review => {
-                    return <div>
+                {data.allContentfulReviews.edges.map((review, index) => {
+                    return <div key={index}>
                         <div className="review-col">
                             <img src={review.node.avatar.file.url} className="avatar" />
                             <h2>{documentToReactComponents(review.node.reviewContent.json)}</h2>

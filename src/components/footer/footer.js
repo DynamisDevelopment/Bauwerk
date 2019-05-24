@@ -58,7 +58,7 @@ const Footer = () => {
                     </div>
                     <div className="newsletter">
                         <input type="text" />
-                        <button>Arrow</button>
+                        <button><img src="./Assets/images/arrow-white-short.svg" /></button>
                     </div>
                     <ul className="social">
                         <li><a href="#">facebook</a></li>

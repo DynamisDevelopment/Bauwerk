@@ -11,6 +11,7 @@ import Layout from "../components/layout"
 import Head from "../components/head"
 import SectionTitle from "../components/sectionTitle/sectionTitle"
 import Reviews from "../components/reviews/reviews"
+import Team from "../components/team/team"
 import Partners from "../components/partners/partners"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
@@ -117,7 +118,7 @@ const IndexPage = () => {
                 <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
             </div>
             <div className="grid">
-                <SectionTitle section={"Our Team"} title={"Our"} subtitle={"Professional Team"} />
+                <Team />
             </div>
             <div className="grid">
                 <Partners />

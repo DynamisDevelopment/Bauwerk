@@ -25,16 +25,30 @@ const BlogSlider = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
     }
     return (
         <div className="blog-section">
             <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
-            <Slider {...settings} slidesPerRow={3} className="blog-slider">
-                {data.allContentfulBlog.edges.map(edge => {
-                    return <a href="#" className="blog-col">
+            <Slider {...settings} className="blog-slider">
+                {data.allContentfulBlog.edges.map((edge, index) => {
+                    return <a href="#" className="blog-col" key={index}>
                         <img src={edge.node.thumbnail.file.url} />
                         <p>{edge.node.createdAt}</p>
                         <h1>{edge.node.title}</h1>

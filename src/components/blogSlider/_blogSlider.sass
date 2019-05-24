@@ -10,11 +10,13 @@
             font-family: "Roboto" 
             img 
                 // Layout
-                height: 270px
-                width: 370px
+                height: auto
+                width: 95%
+                min-width: 300px
             p 
                 // Layout
                 margin-top: 40px
+
             h1
                 // Layout
                 margin-top: 30px
@@ -22,7 +24,7 @@
                 padding-right: 30px
 
                 // Typography
-                font-size: 30px
+                font-size: 4vmin
                 font-weight: 300
             .read-more
                 // Layout
@@ -38,21 +40,15 @@
             .rarrow 
                 // Layout
                 margin-left: 20px
-                height: 30px
-                width: 50px
-.slick-next 
-    // Typography
-    color: transparent
-    font-size: 40px
+                height: 3vmin
+                width: 5vmin
 
-    // Misc Styling
-    border: none 
-    background-color: transparent
-    &:after 
-        content: url("../images/arrow.svg")
-        cursor: pointer
-.slick-prev 
-    @extend .slick-next
-    font-size: 25px !important
-    transform: rotate(180deg)
-    margin-left: -40px
+@media screen and (max-width: 500px)
+    .blog-col h1 
+        height: 100px !important
+    .read-more 
+        margin-bottom: 50px !important
+        .rarrow
+            display: none !important
+    .slick-arrow 
+        display: none !important
