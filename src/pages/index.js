@@ -20,6 +20,7 @@ import Contact from "../components/contact/contact"
 // Sections
 import Jumbotron from "../sections/home/jumbotron/jumbotron"
 import Offers from "../sections/home/offers/offers"
+import Special from "../sections/home/specialOffer/special"
 
 
 const IndexPage = () => {
@@ -110,24 +111,12 @@ const IndexPage = () => {
                 <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
             </div>
             <div className="grid">
-                <SectionTitle section={"Special Offer"} title={"How to save 50%"} subtitle={"of money on repairs"} />
-            </div>
-            <div className="grid">
+                <Special />
                 <Reviews />
-            </div>
-            <div className="grid">
                 <About />
-            </div>
-            <div className="grid">
-                <Team />
-            </div>
-            <div className="grid">
+                <Team />>
                 <Partners />
-            </div>
-            <div className="grid">
                 <BlogSlider />
-            </div>
-            <div className="grid">
                 <Contact />
             </div>
         </Layout>

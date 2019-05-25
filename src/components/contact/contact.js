@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../styles/index.sass"
 import SectionTitle from "../sectionTitle/sectionTitle"
+import Form from "../form/form"
 
 const Contact = () => {
     return (
@@ -15,14 +16,7 @@ const Contact = () => {
                         <p>Email: <img src="./Assets/icons/smartphone.svg" /> hello@bauwerk.de</p>
                     </div>
                 </div>
-                <form className="contact-form">
-                    <h1>Please fill the form</h1>
-                    <input type="text" name="name" placeholder="Name" className="name" />
-                    <input type="text" name="name" placeholder="Phone" className="phone" />
-                    <input type="text" name="name" placeholder="Email" className="email" />
-                    <textarea name="message" placeholder="Message" className="message" />
-                    <button type="submit" className="more-btn">Send <img src="./Assets/images/arrow-white.svg" /></button>
-                </form>
+                <Form />
             </div>
         </div>
     )
