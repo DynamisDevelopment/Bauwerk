@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
 
 //Components
 import Layout from "../components/layout"
@@ -13,12 +12,12 @@ import Partners from "../components/partners/partners"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
 
-const BlogPage = () => {
-  return (
-    <Layout>
-      <Head title="Blog" />
-    </Layout>
-  )
+const PortfolioPage = () => {
+    return (
+        <Layout>
+            <Head title="Portfolio" />
+        </Layout>
+    )
 }
 
-export default BlogPage
+export default PortfolioPage
