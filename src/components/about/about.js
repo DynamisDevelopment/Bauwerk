@@ -24,7 +24,7 @@ const About = () => {
     }
     return (
         <div className="about-section grid">
-            <img src="./Assets/images/about-background.png" />
+            <img src="./Assets/images/about-background.png" className="about-bg" />
             <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
             <div className="about-row">
                 <div className="about-column">
@@ -40,20 +40,24 @@ const About = () => {
                 </div>
                 <Slider {...settings} className="about-slider">
                     <div>
-                        <img src="https://via.placeholder.com/600/694" />
+                        <img src="https://via.placeholder.com/700" />
                     </div>
                     <div>
-                        <img src="https://via.placeholder.com/600/694" />
+                        <img src="https://via.placeholder.com/700" />
                     </div>
                 </Slider>
+            </div>
+            <div className="history">
+                <img src="./Assets/images/15Years.svg" className="years" />
+                <img src="./Assets/images/completedWorks.svg" className="completedWorks" />
             </div>
             <div className="about-row-2">
                 <Slider {...settings} className="about-slider">
                     <div>
-                        <img src="https://via.placeholder.com/600/694" />
+                        <img src="https://via.placeholder.com/600" />
                     </div>
                     <div>
-                        <img src="https://via.placeholder.com/600/694" />
+                        <img src="https://via.placeholder.com/600" />
                     </div>
                 </Slider>
                 <div className="about-column">

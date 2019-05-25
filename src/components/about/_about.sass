@@ -12,6 +12,10 @@
     display: flex
     width: 100%
     justify-content: space-around
+    .about-slider img 
+        height: auto
+        width: 100%
+        min-width: 200px
     .about-column
         // Layout
         display: flex 
@@ -29,12 +33,31 @@
                 font-size: 20px
         p
             // Layout
+            padding-top: 50px
             margin-left: 5%
 
             // Typography
             line-height: 30px
     .about-slider 
         width: 40%
+.history 
+    // Layout
+    grid-column: 2 / 3
+    margin-top: -2200px
+    display: flex 
+    justify-content: space-around
+    width: 100%
+    padding-top: 100px
+    .years 
+        // Layout
+        height: auto
+        width: 50%
+    .completedWorks
+        // Layout
+        margin-top: 100px
+        height: auto
+        width: 40%
+
 .about-row-2
     @extend .about-row
 
@@ -51,3 +74,38 @@
             font-size: 30px
             font-weight: 600
             
+@media screen and (max-width: 900px)
+    .about-bg 
+        height: 2500px
+    .about-row 
+        // Layout
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        margin-top: -2250px
+        height: 900px
+        .about-column 
+            // Layout
+            width: 80%
+
+            // Typography
+            text-align: center
+            p 
+                padding-top: 0 !important
+            .logo-area 
+                // Layout
+                align-self: center
+    .history 
+        margin-top: -2500px
+    .about-row-2
+        // Layout
+        height: 700px
+        margin-top: -1000px !important
+@media screen and (max-width: 600px)
+    .about-slider 
+        width: 60vw !important
+@media screen and (max-width: 450px)
+    .about-column
+        height: 200% !important
+    .history 
+        // margin-top: -2200px
