@@ -8,7 +8,6 @@ import Projects from "../components/projects/projects"
 import About from "../components/about/about"
 import Reviews from "../components/reviews/reviews"
 import Team from "../components/team/team"
-import Partners from "../components/partners/partners"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
 

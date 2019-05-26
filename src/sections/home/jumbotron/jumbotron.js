@@ -11,7 +11,7 @@ const Jumbotron = () => {
     }
     return (
         <div>
-            <div className="jumbotron-info">  {/*Goes over SlideShow*/}
+            <div className="jumbotron-info">
                 <h1>Architecture</h1>
                 <h1>and Interior Design</h1>
                 <h3>Professional buro with many years of experience, develop the most daring and audacious projects.</h3>
