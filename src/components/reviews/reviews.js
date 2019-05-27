@@ -43,7 +43,7 @@ const Reviews = () => {
                             <img src={review.node.avatar.file.url} className="avatar" />
                             <h2>{documentToReactComponents(review.node.reviewContent.json)}</h2>
                             <div className="details">
-                                <img src="./Assets/icons/quotes.svg" />
+                                <img src="../Assets/icons/quotes.svg" />
                                 <div className="more-details">
                                     <p className="name">{review.node.name}</p>
                                     <p className="date">{review.node.createdAt}</p>

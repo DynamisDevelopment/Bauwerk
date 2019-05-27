@@ -12,6 +12,7 @@ const Team = () => {
                 node {
                     name 
                     position 
+                    slug
                     image {
                         file {
                             url
@@ -26,8 +27,31 @@ const Team = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesPerRow: 4,
-        slidesToScroll: 1
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, ,
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
     }
     return (
         <div className="team-section">
@@ -35,7 +59,7 @@ const Team = () => {
             <Slider {...settings} className="team-slider">
                 {data.allContentfulTeam.edges.map((edge, index) => {
                     return <div key={index} className="team-column">
-                        <img src={edge.node.image.file.url} />
+                        <a href={"team/" + edge.node.slug}><img src={edge.node.image.file.url} /></a>
                         <div className="text-wrapper">
                             <h2>{edge.node.name}</h2>
                             <p>{edge.node.position}</p>

@@ -24,12 +24,12 @@ const About = () => {
     }
     return (
         <div className="about-section grid">
-            <img src="./Assets/images/about-background.png" className="about-bg" />
+            <img src="../Assets/images/about-background.png" className="about-bg" />
             <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
             <div className="about-row">
                 <div className="about-column">
                     <Link to="/" className="logo-area">
-                        <img src="./Assets/icons/logo.png" />
+                        <img src="../Assets/icons/logo.png" />
                         <div className="name">
                             <h1>{data.site.siteMetadata.title}</h1>
                             <h3>Architecture</h3>
@@ -48,8 +48,8 @@ const About = () => {
                 </Slider>
             </div>
             <div className="history">
-                <img src="./Assets/images/15Years.svg" className="years" />
-                <img src="./Assets/images/completedWorks.svg" className="completedWorks" />
+                <img src="../Assets/images/15Years.svg" className="years" />
+                <img src="../Assets/images/completedWorks.svg" className="completedWorks" />
             </div>
             <div className="about-row-2">
                 <Slider {...settings} className="about-slider">

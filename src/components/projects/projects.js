@@ -10,6 +10,7 @@ const Projects = () => {
                 node {
                     name
                     category 
+                    slug
                     thumbnail {
                         file {
                             url
@@ -35,7 +36,7 @@ const Projects = () => {
                 <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
                 <div className="projects projects-grid">
                     {data.allContentfulProjects.edges.map((edge, index) => {
-                        return <a href="#" className="project" key={index}>
+                        return <a href={"projects/" + edge.node.slug} className="project" key={index}>
                             <img src={edge.node.thumbnail.file.url} />
                             <div className="text-wrapper">
                                 <p>{edge.node.category}</p>
@@ -46,7 +47,7 @@ const Projects = () => {
                 </div>
                 <Slider {...settings} className="projects projects-slider">
                     {data.allContentfulProjects.edges.map((edge, index) => {
-                        return <a href="#" className="project" key={index}>
+                        return <a href={"projects/" + edge.node.slug} className="project" key={index}>
                             <img src={edge.node.thumbnail.file.url} />
                             <div className="text-wrapper">
                                 <p>{edge.node.category}</p>
@@ -56,7 +57,7 @@ const Projects = () => {
                     })}
 
                 </Slider>
-                <button className="more-btn"><a href="#">View all works <img src="./Assets/images/arrow-white.svg" /></a></button>
+                <button className="more-btn"><a href="#">View all works <img src="../Assets/images/arrow-white.svg" /></a></button>
             </div>
         </div>
     )

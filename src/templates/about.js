@@ -1,26 +1,25 @@
 import React from 'react'
-
-//Components
 import Layout from "../components/layout"
 import Head from "../components/head"
-import SectionTitle from "../components/sectionTitle/sectionTitle"
 import Projects from "../components/projects/projects"
 import About from "../components/about/about"
+import Specializations from "../components/specializations/specializations"
 import Reviews from "../components/reviews/reviews"
-import Team from "../components/team/team"
-import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
 
-const PortfolioPage = () => {
+
+const AboutMe = () => {
     return (
         <Layout>
-            <Head title="Portfolio" />
             <div className="grid">
+                <About />
+                <Reviews />
+                <Specializations />
                 <Projects />
-                <Projects />
+                <Contact />
             </div>
         </Layout>
     )
 }
 
-export default PortfolioPage
+export default AboutMe

@@ -46,10 +46,10 @@ const Footer = () => {
                         <h1>Contact</h1>
                         <h1>Us</h1>
                     </div>
-                    <li><img src="./Assets/icons/smartphone.svg" /> +44 20 4511 0600</li>
-                    <li><img src="./Assets/icons/smartphone.svg" /> info@bauwerk.com</li>
-                    <li><img src="./Assets/icons/smartphone.svg" /> Mohrenstrasse 37. Berlin</li>
-                    <li><img src="./Assets/icons/smartphone.svg" /> Mon-Sat 8AM-8PM <span>Sunday Closed</span></li>
+                    <li><img src="../Assets/icons/smartphone-copper.svg" /> +44 20 4511 0600</li>
+                    <li><img src="../Assets/icons/envelope-copper.svg" /> info@bauwerk.com</li>
+                    <li><img src="../Assets/icons/location-pin-copper.svg" /> Mohrenstrasse 37. Berlin</li>
+                    <li><img src="../Assets/icons/clock-copper.svg" /> Mon-Sat 8AM-8PM <span>Sunday Closed</span></li>
                 </ul>
                 <div className="footer-column">
                     <div className="title">
@@ -58,7 +58,7 @@ const Footer = () => {
                     </div>
                     <div className="newsletter">
                         <input type="text" />
-                        <button><img src="./Assets/images/arrow-white-short.svg" /></button>
+                        <button><img src="../Assets/images/arrow-white-short.svg" /></button>
                     </div>
                     <ul className="social">
                         <li><a href="#">facebook</a></li>
@@ -70,7 +70,7 @@ const Footer = () => {
             </footer>
             <div className="copyright">
                 <Link to="/" className="logo-area">
-                    <img src="./Assets/icons/logo.png" />
+                    <img src="../Assets/icons/logo.png" />
                     <div className="name">
                         <h1>{data.site.siteMetadata.title}</h1>
                         <h3>Architecture</h3>

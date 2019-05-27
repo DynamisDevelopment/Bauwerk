@@ -16,6 +16,9 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
+      <div className="grid">
+        <SectionTitle section={"Blog"} title={"Blog List"} subtitle={"and News"} />
+      </div>
     </Layout>
   )
 }
