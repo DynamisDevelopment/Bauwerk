@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import "../../styles/index.sass"
+import Icons from "../socialIcons/socialIcons"
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -60,12 +61,7 @@ const Footer = () => {
                         <input type="text" />
                         <button><img src="../Assets/images/arrow-white-short.svg" /></button>
                     </div>
-                    <ul className="social">
-                        <li><a href="#">facebook</a></li>
-                        <li><a href="#">insta</a></li>
-                        <li><a href="#">twutter</a></li>
-                        <li><a href="#">behance</a></li>
-                    </ul>
+                    <Icons />
                 </div>
             </footer>
             <div className="copyright">
