@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 //Components
 import Layout from "../components/layout"
@@ -10,13 +11,47 @@ import Reviews from "../components/reviews/reviews"
 import Team from "../components/team/team"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
+import MediaBar from "../components/mediaBar/mediaBar"
+
+
+// Styles 
+import "../styles/_services.sass"
 
 const ServicesPage = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        allContentfulServices{
+            edges {
+                node {
+                    title
+                    description 
+                        thumbnail {
+                            file {
+                                url
+                                }
+                        }
+                }
+                }
+        }
+    }
+    `)
     return (
         <div>
             <Layout>
                 <Head title="Services" />
                 <div className="grid">
+                    <SectionTitle section={"Services"} title={"Our Professional"} subtitle={"Specializations"} />
+                    <MediaBar />
+                    {data.allContentfulServices.edges.map((edge, index) => {
+                        return <div className="services-row">
+                            <img src={edge.node.thumbnail.file.url} />
+                            <div className="text-wrapper">
+                                <h1>{edge.node.title}</h1>
+                                <p>{edge.node.description}</p>
+                                <Link to='/contact'><button className="more-btn">Make an Order <img src="../Assets/icons/arrow.svg" className="btn-arrow" /></button></Link>
+                            </div>
+                        </div>
+                    })}
                     <Contact />
                 </div>
             </Layout>

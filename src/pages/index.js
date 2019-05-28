@@ -32,7 +32,6 @@ const IndexPage = () => {
                 <Jumbotron />
                 <MediaBar />
                 <Offers />
-
                 <Specializations />
                 <Projects />
                 <Special />

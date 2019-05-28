@@ -10,6 +10,7 @@ import Reviews from "../components/reviews/reviews"
 import Team from "../components/team/team"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
+import MediaBar from "../components/mediaBar/mediaBar"
 
 const PortfolioPage = () => {
     return (
@@ -17,6 +18,7 @@ const PortfolioPage = () => {
             <Head title="Portfolio" />
             <div className="grid">
                 <Projects />
+                <MediaBar />
                 <Projects />
             </div>
         </Layout>

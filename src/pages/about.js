@@ -6,13 +6,14 @@ import About from "../components/about/about"
 import Specializations from "../components/specializations/specializations"
 import Team from "../components/team/team"
 import Contact from "../components/contact/contact"
-
+import MediaBar from "../components/mediaBar/mediaBar"
 const AboutPage = () => {
     return (
         <Layout>
             <Head title="About" />
             <div className="grid">
                 <About />
+                <MediaBar />
                 <Specializations />
                 <Contact />
             </div>
