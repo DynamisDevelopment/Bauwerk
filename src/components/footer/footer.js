@@ -58,7 +58,7 @@ const Footer = () => {
                         <h1>Newsletter</h1>
                     </div>
                     <div className="newsletter">
-                        <input type="text" />
+                        <input type="text" placeholder="email" />
                         <button><img src="../Assets/images/arrow-white-short.svg" /></button>
                     </div>
                     <Icons />

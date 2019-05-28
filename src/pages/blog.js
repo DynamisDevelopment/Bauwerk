@@ -5,12 +5,10 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from "../components/layout"
 import Head from "../components/head"
 import SectionTitle from "../components/sectionTitle/sectionTitle"
-import Projects from "../components/projects/projects"
-import About from "../components/about/about"
-import Reviews from "../components/reviews/reviews"
-import Team from "../components/team/team"
-import BlogSlider from "../components/blogSlider/blogSlider"
-import Contact from "../components/contact/contact"
+import Newsletter from "../components/newsletter/newsletter"
+
+// Styles
+import "../styles/index.sass"
 
 const BlogPage = () => {
   return (
@@ -18,6 +16,7 @@ const BlogPage = () => {
       <Head title="Blog" />
       <div className="grid">
         <SectionTitle section={"Blog"} title={"Blog List"} subtitle={"and News"} />
+        <Newsletter />
       </div>
     </Layout>
   )
