@@ -28,10 +28,11 @@ const IndexPage = () => {
     return (
         <Layout>
             <Head title="Home" />
-            <Jumbotron />
-            <Offers />
-
             <div className="grid">
+                <Jumbotron />
+                <MediaBar />
+                <Offers />
+
                 <Specializations />
                 <Projects />
                 <Special />
