@@ -7,6 +7,10 @@ import Specializations from "../components/specializations/specializations"
 import Team from "../components/team/team"
 import Contact from "../components/contact/contact"
 import MediaBar from "../components/mediaBar/mediaBar"
+
+// Styles 
+import "../styles/_about.sass"
+
 const AboutPage = () => {
     return (
         <Layout>

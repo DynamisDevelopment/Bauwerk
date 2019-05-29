@@ -1,0 +1,52 @@
+.subtitle 
+    // Layout
+    margin-top: -200px
+    grid-column: 2 / 3
+    width: 390px
+
+    // Typography
+    font-family: "Roboto"
+    font-size: 25px
+    font-weight: 300
+.details 
+    // Layout
+    margin-top: -75px
+    margin-bottom: 50px
+    width: 100%
+    grid-column: 2 / 3
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    grid-gap: 20px
+    justify-items: center
+    .details-col 
+        min-width: 300px
+    img 
+        // Layout
+        width: 25px
+        height: 25px
+        margin-right: 15px
+    h1 
+        // Layout
+        margin-bottom: 25px
+
+        // Typography
+        font-family: "Playfair Display"
+        text-transform: uppercase
+        font-size: 25px
+        font-weight: 600
+    ul 
+        // Typography
+        font-family: "Roboto"
+        font-weight: 300
+        li 
+            margin-bottom: 15px
+            &:nth-child(1)
+                font-weight: 600
+
+@media screen and (max-width: 670px)
+    .subtitle 
+        margin-top: -250px
+        width: 100%
+        text-align: center
+
+        
