@@ -31,34 +31,32 @@ const Projects = () => {
         slidesToScroll: 1
     }
     return (
-        <div className="projects-wrapper bg-white grid">
-            <div className="projects-section">
-                <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
-                <div className="projects projects-grid">
-                    {data.allContentfulProjects.edges.map((edge, index) => {
-                        return <a href={"projects/" + edge.node.slug} className="project" key={index}>
-                            <img src={edge.node.thumbnail.file.url} />
-                            <div className="text-wrapper">
-                                <p>{edge.node.category}</p>
-                                <h1>{edge.node.name}</h1>
-                            </div>
-                        </a>
-                    })}
-                </div>
-                <Slider {...settings} className="projects projects-slider">
-                    {data.allContentfulProjects.edges.map((edge, index) => {
-                        return <a href={"projects/" + edge.node.slug} className="project" key={index}>
-                            <img src={edge.node.thumbnail.file.url} />
-                            <div className="text-wrapper">
-                                <p>{edge.node.category}</p>
-                                <h1>{edge.node.name}</h1>
-                            </div>
-                        </a>
-                    })}
-
-                </Slider>
-                <button className="more-btn"><a href="#">View all works <img src="../Assets/images/arrow-white.svg" /></a></button>
+        <div className="projects-section">
+            <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
+            <div className="projects projects-grid">
+                {data.allContentfulProjects.edges.map((edge, index) => {
+                    return <a href={"projects/" + edge.node.slug} className="project" key={index}>
+                        <img src={edge.node.thumbnail.file.url} />
+                        <div className="text-wrapper">
+                            <p>{edge.node.category}</p>
+                            <h1>{edge.node.name}</h1>
+                        </div>
+                    </a>
+                })}
             </div>
+            <Slider {...settings} className="projects projects-slider">
+                {data.allContentfulProjects.edges.map((edge, index) => {
+                    return <a href={"projects/" + edge.node.slug} className="project" key={index}>
+                        <img src={edge.node.thumbnail.file.url} />
+                        <div className="text-wrapper">
+                            <p>{edge.node.category}</p>
+                            <h1>{edge.node.name}</h1>
+                        </div>
+                    </a>
+                })}
+
+            </Slider>
+            <button className="more-btn"><a href="#">View all works <img src="../Assets/images/arrow-white.svg" /></a></button>
         </div>
     )
 }

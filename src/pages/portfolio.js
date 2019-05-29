@@ -12,11 +12,14 @@ import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
 import MediaBar from "../components/mediaBar/mediaBar"
 
+// Styles 
+import "../styles/_portfolio.sass"
 const PortfolioPage = () => {
     return (
         <Layout>
             <Head title="Portfolio" />
-            <div className="grid">
+            <div className="grid portfolio-page">
+                <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
                 <Projects />
                 <MediaBar />
                 <Projects />
