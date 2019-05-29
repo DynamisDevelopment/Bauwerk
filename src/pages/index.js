@@ -1,7 +1,9 @@
 // External Imports
 import React, { useState } from 'react'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import { useSpring, animated } from 'react-spring'
 import Slider from "react-slick"
+
 // Styles
 import "../styles/index.sass"
 
@@ -25,6 +27,32 @@ import Special from "../sections/home/specialOffer/special"
 
 
 const IndexPage = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        allContentfulPages(filter: {
+            name: {
+                eq: "home"
+            }
+            }) {
+            edges {
+                node {
+                    name
+                    sectionOne {
+                        json
+                    }
+                    sectionTwo {
+                        json
+                    }
+                    images {
+                        file {
+                         url
+                        }
+                    }
+                }
+            }
+        }
+    }
+    `)
     return (
         <Layout>
             <Head title="Home" />
@@ -36,7 +64,7 @@ const IndexPage = () => {
                 <Projects />
                 <Special />
                 <Reviews />
-                <About />
+                <About {...data.allContentfulPages.edges[0].node} />
                 <Team />
                 <BlogSlider />
                 <Contact />

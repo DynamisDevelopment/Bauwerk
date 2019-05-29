@@ -30,8 +30,8 @@ const ContactPage = () => {
                     <div className="details-col">
                         <h1>Head Office Berlin</h1>
                         <ul>
-                            <li><img src="../Assets/icons/location-pin-copper.svg" /> Mohrenstrasse 36, Berlin</li>
-                            <li><img src="../Assets/icons/smartphone-copper.svg" />+44 20 4511 0500</li>
+                            <li><img src="../Assets/icons/location-pin-copper.svg" /> 0600 Las vegas Boulevard South</li>
+                            <li><img src="../Assets/icons/smartphone-copper.svg" />+1 702 740 0600</li>
                             <li><img src="../Assets/icons/envelope-copper.svg" />info@bauwerk.de</li>
                             <li><img src="../Assets/icons/clock-copper.svg" />Mon - Sat 8AM-8PM sunday closed</li>
                         </ul>
@@ -39,8 +39,8 @@ const ContactPage = () => {
                     <div className="details-col">
                         <h1>Head Office Berlin</h1>
                         <ul>
-                            <li><img src="../Assets/icons/location-pin-copper.svg" /> Mohrenstrasse 36, Berlin</li>
-                            <li><img src="../Assets/icons/smartphone-copper.svg" />+44 20 4511 0500</li>
+                            <li><img src="../Assets/icons/location-pin-copper.svg" /> Placa d'Urquinoana, 4, Barcelona</li>
+                            <li><img src="../Assets/icons/smartphone-copper.svg" />+34 933 12 0600</li>
                             <li><img src="../Assets/icons/envelope-copper.svg" />info@bauwerk.de</li>
                             <li><img src="../Assets/icons/clock-copper.svg" />Mon - Sat 8AM-8PM sunday closed</li>
                         </ul>

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+
 import Layout from "../components/layout"
 import Head from "../components/head"
 import About from "../components/about/about"
@@ -12,13 +13,40 @@ import MediaBar from "../components/mediaBar/mediaBar"
 import "../styles/_about.sass"
 
 const AboutPage = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        allContentfulPages(filter: {
+            name: {
+                eq: "about"
+            }
+            }) {
+            edges {
+                node {
+                    name
+                    sectionOne {
+                        json
+                    }
+                    sectionTwo {
+                        json
+                    }
+                    images {
+                        file {
+                         url
+                        }
+                    }
+                }
+            }
+        }
+    }
+    `)
     return (
         <Layout>
             <Head title="About" />
-            <div className="grid">
-                <About />
+            <div className="grid about-page">
+                <About {...data.allContentfulPages.edges[0].node} />
                 <MediaBar />
                 <Specializations />
+                <Team />
                 <Contact />
             </div>
         </Layout>

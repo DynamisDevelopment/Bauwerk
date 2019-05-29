@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Slider from "react-slick"
 import SectionTitle from "../sectionTitle/sectionTitle"
 
-const About = () => {
+const About = props => {
     const data = useStaticQuery(graphql`
     query {
       site {
@@ -36,15 +37,14 @@ const About = () => {
                             <h3>Buro</h3>
                         </div>
                     </Link>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magnam, dicta animi aperiam numquam repellendus autem dolorum. Quam dicta dolorem officiis omnis vero, ullam recusandae minus reiciendis dolorum rem quasi corporis autem non aut eum repellendus! Molestiae explicabo quasi eveniet quidem, earum accusamus cumque quia dolore minus assumenda iusto harum reprehenderit. Culpa dolores aut obcaecati! Dolore, voluptas temporibus ex culpa nesciunt ducimus animi inventore blanditiis, cupiditate molestias tempora facere, sed harum a aut incidunt laudantium quod error minus natus ipsum quae optio hic. Impedit dolore nemo quos enim a magnam. Omnis nesciunt doloribus eos? Cupiditate dolor natus ad neque odio odit minima consequuntur!</p>
+                    {documentToReactComponents(props.sectionOne.json)}
                 </div>
                 <Slider {...settings} className="about-slider">
-                    <div>
-                        <img src="https://via.placeholder.com/700" />
-                    </div>
-                    <div>
-                        <img src="https://via.placeholder.com/700" />
-                    </div>
+                    {props.images.map((edge, index) => {
+                        return <div key={index}>
+                            <img src={edge.file.url} />
+                        </div>
+                    })}
                 </Slider>
             </div>
             <div className="history">
@@ -53,16 +53,15 @@ const About = () => {
             </div>
             <div className="about-row-2">
                 <Slider {...settings} className="about-slider">
-                    <div>
-                        <img src="https://via.placeholder.com/600" />
-                    </div>
-                    <div>
-                        <img src="https://via.placeholder.com/600" />
-                    </div>
+                    {props.images.map((edge, index) => {
+                        return <div key={index}>
+                            <img src={edge.file.url} />
+                        </div>
+                    })}
                 </Slider>
                 <div className="about-column">
                     <h2>Our main goal is to combine our professionalism with the clients desire.</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magnam, dicta animi aperiam numquam repellendus autem dolorum. Quam dicta dolorem officiis omnis vero, ullam recusandae minus reiciendis dolorum rem quasi corporis autem non aut eum repellendus! Molestiae explicabo quasi eveniet quidem, earum accusamus cumque quia dolore minus assumenda iusto harum reprehenderit. Culpa dolores aut obcaecati! </p>
+                    {documentToReactComponents(props.sectionTwo.json)}
                 </div>
             </div>
         </div>
