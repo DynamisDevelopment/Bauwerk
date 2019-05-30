@@ -70,30 +70,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
             }
         })
     })
+
 }
 
-// module.exports.createPages = async ({ graphql, actions }) => {
-//     const { createPage } = actions
-//     const projectsTemplate = path.resolve('./src/templates/portfolioCase.js')
-//     const res = await graphql(`
-//         query {
-//             allContentfulProjects{
-//                 edges {
-//                   node {
-//                     slug
-//                   }
-//                 }
-//               }
-//             }
-//         `)
-
-//     res.data.allContentfulProjects.edges.forEach(edge => {
-//         createPage({
-//             component: projectsTemplate,
-//             path: `/projects/${edge.node.slug}`,
-//             context: {
-//                 slug: edge.node.slug
-//             }
-//         })
-//     })
-// }

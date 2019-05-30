@@ -14,7 +14,7 @@ import "../styles/_blog.sass"
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
   query {
-    allContentfulBlog{
+    allContentfulBlog(limit: 4){
       edges {
         node {
           title
