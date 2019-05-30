@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Slider from "react-slick"
 import SectionTitle from "../sectionTitle/sectionTitle"
+import Icons from "../socialIcons/socialIcons"
 
 const About = props => {
     const data = useStaticQuery(graphql`
@@ -51,7 +52,7 @@ const About = props => {
                 <img src="../Assets/images/15Years.svg" className="years" />
                 <img src="../Assets/images/completedWorks.svg" className="completedWorks" />
             </div>
-            <div className="about-row-2">
+            {props.sectionTwo && <div className="about-row-2">
                 <Slider {...settings} className="about-slider">
                     {props.images.map((edge, index) => {
                         return <div key={index}>
@@ -63,7 +64,7 @@ const About = props => {
                     <h2>Our main goal is to combine our professionalism with the clients desire.</h2>
                     {documentToReactComponents(props.sectionTwo.json)}
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }

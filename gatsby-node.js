@@ -7,9 +7,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
         query {
             allContentfulTeam{
                 edges {
-                  node {
-                    slug
-                  }
+                    node {
+                        slug
+                    }   
                 }
               }
             }
@@ -31,13 +31,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
         query {
             allContentfulProjects{
                 edges {
-                node {
-                    slug
-                }
+                    node {
+                        slug
+                    }
                 }
             }
-            }
-        `)
+        }
+    `)
     projects.data.allContentfulProjects.edges.forEach(edge => {
         createPage({
             component: projectsTemplate,
@@ -54,13 +54,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
         query {
             allContentfulBlog{
                 edges {
-                node {
-                    slug
-                }
+                    node {
+                        slug
+                    }
                 }
             }
-            }
-        `)
+        }
+    `)
     posts.data.allContentfulBlog.edges.forEach(edge => {
         createPage({
             component: postTemplate,
