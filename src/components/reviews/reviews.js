@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SectionTitle from "../sectionTitle/sectionTitle"
 import Slider from "react-slick"
 
-const Reviews = () => {
+const Reviews = props => {
     const data = useStaticQuery(graphql`
     query {
         allContentfulReviews {
@@ -37,7 +37,7 @@ const Reviews = () => {
         <div className="reviews-section">
             <SectionTitle section={"Testimonials"} title={"What"} subtitle={"Clients Say"} />
             <Slider {...settings} slidesPerRow={2} className="reviews-slider">
-                {data.allContentfulReviews.edges.map((review, index) => {
+                {props.edges.map((review, index) => {
                     return <div key={index}>
                         <div className="review-col">
                             <img src={review.node.avatar.file.url} className="avatar" />

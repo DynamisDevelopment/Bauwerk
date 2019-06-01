@@ -1,8 +1,6 @@
 // External Imports
-import React, { useState } from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import { useSpring, animated } from 'react-spring'
-import Slider from "react-slick"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
 // Styles
 import "../styles/index.sass"
@@ -51,6 +49,36 @@ const IndexPage = () => {
                 }
             }
         }
+        allContentfulProjects(limit: 4){
+            edges {
+                node {
+                    name
+                    category 
+                    slug
+                    thumbnail {
+                        file {
+                            url
+                        }
+                    }
+                }
+            }
+        }
+        allContentfulReviews{
+            edges {
+                node {
+                    createdAt(formatString: "MMMM Do, YYYY") 
+                    name 
+                    reviewContent{
+                         json
+                    }
+                    avatar {
+                    file {
+                        url
+                    }
+                    }
+                }
+            }
+        }
     }
     `)
     return (
@@ -61,9 +89,9 @@ const IndexPage = () => {
                 <MediaBar />
                 <Offers />
                 <Specializations />
-                <Projects />
+                <Projects {...data.allContentfulProjects} />
                 <Special />
-                <Reviews />
+                <Reviews {...data.allContentfulReviews} />
                 <About {...data.allContentfulPages.edges[0].node} />
                 <Team />
                 <BlogSlider />

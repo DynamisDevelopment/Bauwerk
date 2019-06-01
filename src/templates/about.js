@@ -38,6 +38,35 @@ const AboutMe = () => {
                         file {
                             url
                         }
+                    }   
+                }
+            }
+        }
+        allContentfulProjects(filter: {contributor: { elemMatch: { slug: { eq: "pablo"}} }}){
+            edges {
+                node {       
+                    name 
+                    category
+                    thumbnail {
+                        file {
+                            url
+                        }
+                    }
+                }
+            }
+        }
+        allContentfulReviews(filter: {reviewie: { elemMatch: { slug: { eq: "pablo"}} }}) {
+            edges {
+                node {
+                    createdAt(formatString: "MMMM Do, YYYY") 
+                    name 
+                    reviewContent{
+                         json
+                    }
+                    avatar {
+                    file {
+                        url
+                    }
                     }
                 }
             }
@@ -60,9 +89,9 @@ const AboutMe = () => {
                     </div>
                 </div>
                 <Awards {...query.allContentfulTeam.edges[0].node} whos={"My"} />
-                <Reviews />
+                <Reviews {...query.allContentfulReviews} />
                 <Specializations />
-                <Projects />
+                <Projects {...query.allContentfulProjects} />
                 <Contact />
             </div>
         </Layout>

@@ -6,7 +6,7 @@ import SectionTitle from "../sectionTitle/sectionTitle"
 const BlogSlider = () => {
     const data = useStaticQuery(graphql`
     query {
-        allContentfulBlog{
+        allContentfulBlog( sort: { fields: createdAt, order: DESC } ){
         edges {
             node {
                 title 

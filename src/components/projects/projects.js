@@ -1,26 +1,9 @@
 import React from 'react'
 import SectionTitle from "../sectionTitle/sectionTitle"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Slider from "react-slick"
-const Projects = () => {
-    const data = useStaticQuery(graphql`
-    query {
-        allContentfulProjects {
-            edges {
-                node {
-                    name
-                    category 
-                    slug
-                    thumbnail {
-                        file {
-                            url
-                        }
-                    }
-                }
-            }
-        }
-    }
-    `)
+
+const Projects = props => {
     var settings = {
         dots: false,
         arrows: false,
@@ -30,11 +13,12 @@ const Projects = () => {
         slidesPerRow: 1,
         slidesToScroll: 1
     }
+    console.log(props)
     return (
         <div className="projects-section">
             <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
             <div className="projects projects-grid">
-                {data.allContentfulProjects.edges.map((edge, index) => {
+                {props.edges.map((edge, index) => {
                     return <a href={"projects/" + edge.node.slug} className="project" key={index}>
                         <img src={edge.node.thumbnail.file.url} />
                         <div className="text-wrapper">
@@ -45,7 +29,7 @@ const Projects = () => {
                 })}
             </div>
             <Slider {...settings} className="projects projects-slider">
-                {data.allContentfulProjects.edges.map((edge, index) => {
+                {props.edges.map((edge, index) => {
                     return <a href={"projects/" + edge.node.slug} className="project" key={index}>
                         <img src={edge.node.thumbnail.file.url} />
                         <div className="text-wrapper">
@@ -56,7 +40,7 @@ const Projects = () => {
                 })}
 
             </Slider>
-            <button className="more-btn"><a href="#">View all works <img src="../Assets/images/arrow-white.svg" /></a></button>
+            <button className="more-btn"><Link to="/portfolio">View all works <img src="../Assets/images/arrow-white.svg" /></Link></button>
         </div>
     )
 }
