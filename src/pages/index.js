@@ -43,7 +43,7 @@ const IndexPage = () => {
                     sectionTwo {
                         json
                     }
-                    images {
+                    aboutImages {
                         file {
                          url
                         }

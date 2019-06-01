@@ -20,7 +20,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             component: teamTemplate,
             path: `/team/${edge.node.slug}`,
             context: {
-                slug: edge.node.slug
+                $slug: edge.node.slug
             }
         })
     })

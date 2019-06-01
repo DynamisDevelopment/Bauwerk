@@ -8,6 +8,7 @@ import Specializations from "../components/specializations/specializations"
 import Team from "../components/team/team"
 import Contact from "../components/contact/contact"
 import MediaBar from "../components/mediaBar/mediaBar"
+import Awards from "../components/awards/awards"
 
 // Styles 
 import "../styles/_about.sass"
@@ -29,9 +30,15 @@ const AboutPage = () => {
                     sectionTwo {
                         json
                     }
-                    images {
+                    aboutImages {
                         file {
                          url
+                        }
+                    }
+                    awards {
+                        title
+                        file {
+                            url
                         }
                     }
                 }
@@ -45,6 +52,7 @@ const AboutPage = () => {
             <div className="grid about-page">
                 <About {...data.allContentfulPages.edges[0].node} />
                 <MediaBar />
+                <Awards {...data.allContentfulPages.edges[0].node} whos={"Our"} />
                 <Specializations />
                 <Team />
                 <Contact />

@@ -24,6 +24,7 @@ const About = props => {
         slidesToScroll: 1,
         adaptiveHeight: true
     }
+    console.log(props)
     return (
         <div className="about-section grid">
             <img src="../Assets/images/about-background.png" className="about-bg" />
@@ -41,7 +42,7 @@ const About = props => {
                     {documentToReactComponents(props.sectionOne.json)}
                 </div>
                 <Slider {...settings} className="about-slider">
-                    {props.images.map((edge, index) => {
+                    {props.aboutImages.map((edge, index) => {
                         return <div key={index}>
                             <img src={edge.file.url} />
                         </div>
@@ -54,7 +55,7 @@ const About = props => {
             </div>
             {props.sectionTwo && <div className="about-row-2">
                 <Slider {...settings} className="about-slider">
-                    {props.images.map((edge, index) => {
+                    {props.aboutImages.map((edge, index) => {
                         return <div key={index}>
                             <img src={edge.file.url} />
                         </div>

@@ -13,7 +13,7 @@ const Team = () => {
                     name 
                     position 
                     slug
-                    images {
+                    aboutImages {
                         file {
                             url
                         }
@@ -59,7 +59,7 @@ const Team = () => {
             <Slider {...settings} className="team-slider">
                 {data.allContentfulTeam.edges.map((edge, index) => {
                     return <div key={index} className="team-column">
-                        <a href={"team/" + edge.node.slug}><img src={edge.node.images[0].file.url} /></a>
+                        <a href={"team/" + edge.node.slug}><img src={edge.node.aboutImages[0].file.url} /></a>
                         <div className="text-wrapper">
                             <h2>{edge.node.name}</h2>
                             <p>{edge.node.position}</p>

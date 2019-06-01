@@ -1,13 +1,14 @@
 import React from 'react'
 import Layout from "../components/layout"
 import { graphql, useStaticQuery } from 'gatsby'
-import Head from "../components/head"
+import { Helmet } from 'react-helmet'
 import Projects from "../components/projects/projects"
 import About from "../components/about/about"
 import Specializations from "../components/specializations/specializations"
 import Reviews from "../components/reviews/reviews"
 import Contact from "../components/contact/contact"
 import MediaBar from "../components/mediaBar/mediaBar"
+import Awards from "../components/awards/awards"
 
 // Styles 
 import "../styles/_about.sass"
@@ -16,7 +17,7 @@ import "../styles/_about-template.sass"
 const AboutMe = () => {
     const query = useStaticQuery(graphql`
     query {
-        allContentfulTeam(filter: {slug: { eq: "folk" }}){
+        allContentfulTeam(filter: {slug: { eq: "pablo" }}){
             edges {
                 node {
                     name
@@ -24,13 +25,19 @@ const AboutMe = () => {
                     sectionOne {
                         json
                     }
-                    images {
+                    aboutImages {
                         file {
                             url
                         }
                     }
                     details {
                         skills
+                    }
+                    awards {
+                        title
+                        file {
+                            url
+                        }
                     }
                 }
             }
@@ -39,11 +46,12 @@ const AboutMe = () => {
 `)
     return (
         <Layout>
+            <Helmet title={`About | ${query.allContentfulTeam.edges[0].node.name}`} />
             <div className="grid about-page">
                 <About {...query.allContentfulTeam.edges[0].node} />
                 <MediaBar />
                 <div className="skills">
-                    <img src={query.allContentfulTeam.edges[0].node.images[0].file.url} className="skill-img" />
+                    <img src={query.allContentfulTeam.edges[0].node.aboutImages[0].file.url} className="skill-img" />
                     <div className="skills-list">
                         <h1>My professional skills</h1>
                         <ul>
@@ -51,6 +59,7 @@ const AboutMe = () => {
                         </ul>
                     </div>
                 </div>
+                <Awards {...query.allContentfulTeam.edges[0].node} whos={"My"} />
                 <Reviews />
                 <Specializations />
                 <Projects />
