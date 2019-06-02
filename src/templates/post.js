@@ -63,7 +63,7 @@ const Post = () => {
                     </div>
                     <Slider {...settings} className="post-slider">
                         {post.images.map((image, index) => {
-                            return <div className="post-image">
+                            return <div className="post-image" key={index}>
                                 <img src={image.file.url} />
                             </div>
                         })}
