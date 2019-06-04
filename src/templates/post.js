@@ -1,7 +1,7 @@
 import React from 'react'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import SectionTitle from "../components/sectionTitle/sectionTitle"
 import MediaBar from "../components/mediaBar/mediaBar"
 import Slider from "react-slick"
@@ -12,24 +12,22 @@ import Icons from "../components/socialIcons/socialIcons"
 // Styles 
 import "../styles/_post-template.sass"
 
-const Post = () => {
-    const data = useStaticQuery(graphql`
-    query {
-        allContentfulBlog(filter: {slug: { eq: "starting-design" }}) {
-            edges {
-                node {
-                    title 
-                    description 
-                    createdAt(formatString: "MMMM Do, YYYY")
-                    mainImage { file { url } }
-                    images { file { url } }
-                    content { json }
-                }
-            }
+export const posts = graphql`
+    query($slug: String!) {
+        contentfulBlog(slug: { eq: $slug}) {
+            title 
+            description 
+            createdAt(formatString: "MMMM Do, YYYY")
+            mainImage { file { url } }
+            images { file { url } }
+            content { json }
         }
     }
-    `)
-    const post = data.allContentfulBlog.edges[0].node
+    `
+
+const Post = props => {
+
+    const post = props.data.contentfulBlog
 
     var settings = {
         dots: false,

@@ -6,7 +6,7 @@ import Form from "../form/form"
 const Contact = () => {
     return (
         <div className="contact-section grid">
-            <img src="../Assets/images/Contact-bg.jpg" className="contact-bg" />
+            <img src="../Assets/images/contact-bg.jpg" className="contact-bg" />
             <SectionTitle section={"Contact"} title={"Let's Start"} subtitle={"a New Project"} />
             <div className="contact-row">
                 <div className="info">

@@ -1,5 +1,5 @@
 .jumbotron 
-    grid-column: 1 / 5
+    grid-column: 1 / -1
     grid-row: 1 / 2
 .jumbotron-slider 
     margin-top: -120px
@@ -7,7 +7,7 @@
     grid-column: 1 / 5
     display: grid 
     grid-template-columns: 15% 78% 20% //Weird but it works
-    grid-template-rows: 800px 150px 
+    grid-template-rows: 85vh 10vh 
     z-index: 2
     img
         // Layout
@@ -34,7 +34,7 @@
         grid-row: 2 / 3
         display: flex !important
         justify-content: space-between
-        width: 30%
+        width: 40%
         .slick-active  
             @extend button
             background-color: #fff !important

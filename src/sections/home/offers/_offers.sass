@@ -1,6 +1,5 @@
 .more-offers 
     // Layout
-    margin-top: -30px
     width: 100%
     display: flex
     justify-content: space-between
@@ -22,9 +21,13 @@
 
         // Typography
         font-family: "Playfair Display"
-        font-size: 25px
+        font-size: 2.5vmin
         font-weight: 600
     p 
         // Typography
         font-family: "Roboto"
         color: $copper
+
+@media screen and (max-width: 600px)
+    .more-offers 
+        display: none 

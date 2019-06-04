@@ -2,7 +2,7 @@ import React from 'react'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Slider from "react-slick"
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import SectionTitle from "../components/sectionTitle/sectionTitle"
 import MediaBar from "../components/mediaBar/mediaBar"
 import BlogSlider from "../components/blogSlider/blogSlider"
@@ -13,45 +13,41 @@ import Icons from "../components/socialIcons/socialIcons"
 // Styles 
 import "../styles/_project-template.sass"
 
-const PortfolioCase = () => {
-    const data = useStaticQuery(graphql`
-    query {
-        allContentfulProjects(filter: {slug: { eq: "large-house" }}){
-            edges {
-                node {
-                    name 
-                    category 
-                    createdAt(formatString: "MMMM Do, YYYY") 
-                    bgImage { file { url } }
-                    sliderImages {
-                        title
-                        file { url }
-                    }
-                    intro { json }
-                    sideImage { file { url } }
-                    bioSection1 { json }
-                    bioSection2 { json }
-                    details {
-                        cost 
-                        type 
-                        year 
-                        style 
-                        video 
-                        status 
-                        service 
-                        location
-                        reviews {
-                            author 
-                            content
-                            createdAt
-                        }
-                    }
+export const projects = graphql`
+    query($slug: String!) {
+        contentfulProjects(slug: { eq: $slug}){
+            name 
+            category 
+            createdAt(formatString: "MMMM Do, YYYY") 
+            bgImage { file { url } }
+            sliderImages {
+                title
+                file { url }
+            }
+            intro { json }
+            sideImage { file { url } }
+            bioSection1 { json }
+            bioSection2 { json }
+            details {
+                cost 
+                type 
+                year 
+                style 
+                video 
+                status 
+                service 
+                location
+                reviews {
+                    author 
+                    content
+                    createdAt
                 }
             }
         }
     }
-    `)
-    const project = data.allContentfulProjects.edges[0].node
+    `
+const PortfolioCase = props => {
+    const project = props.data.contentfulProjects
 
     var settings = {
         dots: true,
@@ -62,7 +58,6 @@ const PortfolioCase = () => {
         slidesToScroll: 1,
         adaptiveHeight: true
     }
-
     return (
         <Layout over={true}>
             <div className="grid">

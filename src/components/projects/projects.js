@@ -19,24 +19,24 @@ const Projects = props => {
             <SectionTitle section={"Portfolio"} title={props.whos + " Latest"} subtitle={"Projects"} />
             <div className="projects projects-grid">
                 {props.edges.map((edge, index) => {
-                    return <a href={"projects/" + edge.node.slug} className="project" key={index}>
+                    return <Link to={"projects/" + edge.node.slug} className="project" key={index}>
                         <img src={edge.node.thumbnail.file.url} />
                         <div className="text-wrapper">
                             <p>{edge.node.category}</p>
                             <h1>{edge.node.name}</h1>
                         </div>
-                    </a>
+                    </Link>
                 })}
             </div>
             <Slider {...settings} className="projects projects-slider">
                 {props.edges.map((edge, index) => {
-                    return <a href={"projects/" + edge.node.slug} className="project" key={index}>
+                    return <Link to={"projects/" + edge.node.slug} className="project" key={index}>
                         <img src={edge.node.thumbnail.file.url} />
                         <div className="text-wrapper">
                             <p>{edge.node.category}</p>
                             <h1>{edge.node.name}</h1>
                         </div>
-                    </a>
+                    </Link>
                 })}
 
             </Slider>

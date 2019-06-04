@@ -27,7 +27,7 @@ const About = props => {
     console.log(props)
     return (
         <div className="about-section grid">
-            <img src="../Assets/images/about-background.png" className="about-bg" />
+            <img src="../Assets/images/about-bg.jpg" className="about-bg" />
             <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
             <div className="about-row">
                 <div className="about-column">

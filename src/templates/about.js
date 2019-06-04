@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Projects from "../components/projects/projects"
 import About from "../components/about/about"
@@ -14,34 +14,19 @@ import Awards from "../components/awards/awards"
 import "../styles/_about.sass"
 import "../styles/_about-template.sass"
 
-const AboutMe = () => {
-    const query = useStaticQuery(graphql`
-    query {
-        allContentfulTeam(filter: {slug: { eq: "webb" }}){
-            edges {
-                node {
-                    name
-                    slug
-                    sideImage { file { url } }
-                    sectionOne {
-                        json
-                    }
-                    aboutImages {
-                        file {
-                            url
-                        }
-                    }
-                    details {
-                        skills
-                    }
-                    awards {
-                        title
-                        file {
-                            url
-                        }
-                    }   
-                }
-            }
+export const teams = graphql`
+    query($slug: String!) {
+        contentfulTeam(slug: { eq: $slug}){
+            name
+            slug
+            sideImage { file { url } }
+            sectionOne { json }
+            aboutImages { file { url } }
+            details { skills }
+            awards {
+                title
+                file { url }
+            }   
         }
         allContentfulProjects(filter: {contributor: { elemMatch: { slug: { eq: "webb"}} }} limit: 4){
             edges {
@@ -73,26 +58,28 @@ const AboutMe = () => {
             }
         }
     }
-`)
+`
+
+const AboutMe = props => {
     return (
         <Layout>
-            <Helmet title={`About | ${query.allContentfulTeam.edges[0].node.name}`} />
+            <Helmet title={`About | ${props.data.contentfulTeam.name}`} />
             <div className="grid about-page">
-                <About {...query.allContentfulTeam.edges[0].node} />
+                <About {...props.data.contentfulTeam} />
                 <MediaBar />
                 <div className="skills">
-                    <img src={query.allContentfulTeam.edges[0].node.sideImage.file.url} className="skill-img" />
+                    <img src={props.data.contentfulTeam.sideImage.file.url} className="skill-img" />
                     <div className="skills-list">
                         <h1>My professional skills</h1>
                         <ul>
-                            {query.allContentfulTeam.edges[0].node.details.skills.map((skill, index) => <li key={index}>{skill}</li>)}
+                            {props.data.contentfulTeam.details.skills.map((skill, index) => <li key={index}>{skill}</li>)}
                         </ul>
                     </div>
                 </div>
-                <Awards {...query.allContentfulTeam.edges[0].node} whos={"My"} />
-                <Reviews {...query.allContentfulReviews} />
+                <Awards {...props.data.contentfulTeam} whos={"My"} />
+                <Reviews {...props.data.allContentfulReviews} />
                 <Specializations />
-                <Projects {...query.allContentfulProjects} />
+                <Projects {...props.data.allContentfulProjects} who={"My"} />
                 <Contact />
             </div>
         </Layout>
