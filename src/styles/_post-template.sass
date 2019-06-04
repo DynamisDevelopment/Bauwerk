@@ -1,12 +1,18 @@
 .blog-page 
     grid-column: 2 / 3
+    display: flex 
+    flex-direction: column 
+    align-items: center
+    .path, .share
+        align-self: flex-start
     .section-title 
         // Layout
         margin-top: 30px
+        align-self: flex-start
     .title, .posted
         // Layout 
         padding: 15px 20% 40px 20%
-
+        align-self: flex-start 
         // Typography
         font-family: "Roboto"
         font-weight: 300
@@ -18,7 +24,8 @@
         color: grey
         font-style: 10px
     .main-image 
-        width: 100%
+        width: 1170px 
+        height: 530px
         margin-bottom: 50px
     p 
         // Layout

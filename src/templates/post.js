@@ -9,28 +9,21 @@ import BlogSlider from "../components/blogSlider/blogSlider"
 import Newsletter from "../components/newsletter/newsletter"
 import Icons from "../components/socialIcons/socialIcons"
 
+// Styles 
+import "../styles/_post-template.sass"
+
 const Post = () => {
     const data = useStaticQuery(graphql`
     query {
-        allContentfulBlog(filter: {slug: { eq: "interiors" }}) {
+        allContentfulBlog(filter: {slug: { eq: "starting-design" }}) {
             edges {
                 node {
                     title 
                     description 
                     createdAt(formatString: "MMMM Do, YYYY")
-                    mainImage {
-                        file {
-                            url
-                        }
-                    }
-                    images {
-                        file {
-                            url
-                        }
-                    }
-                    content {
-                        json
-                    }
+                    mainImage { file { url } }
+                    images { file { url } }
+                    content { json }
                 }
             }
         }
@@ -61,13 +54,13 @@ const Post = () => {
                         <h2>Share: </h2>
                         <Icons />
                     </div>
-                    <Slider {...settings} className="post-slider">
+                    {post.images && <Slider {...settings} className="post-slider">
                         {post.images.map((image, index) => {
                             return <div className="post-image" key={index}>
                                 <img src={image.file.url} />
                             </div>
                         })}
-                    </Slider>
+                    </Slider>}
                 </div>
                 <MediaBar />
                 <SectionTitle section={""} title={"Reltated Posts"} subtitle={""} />

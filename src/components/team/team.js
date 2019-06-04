@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
 import SectionTitle from "../sectionTitle/sectionTitle"
 
@@ -13,6 +13,7 @@ const Team = () => {
                     name 
                     position 
                     slug
+                    thumbnail { file { url } }
                     aboutImages {
                         file {
                             url
@@ -28,6 +29,7 @@ const Team = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
+        lazyLoad: 'progressive',
         slidesToScroll: 4,
         responsive: [
             {
@@ -59,7 +61,10 @@ const Team = () => {
             <Slider {...settings} className="team-slider">
                 {data.allContentfulTeam.edges.map((edge, index) => {
                     return <div key={index} className="team-column">
-                        <a href={"team/" + edge.node.slug}><img src={edge.node.aboutImages[0].file.url} /></a>
+                        <Link to={"team/" + edge.node.slug}>
+                            <img src={edge.node.thumbnail.file.url} />
+                            <div className="veil"></div>
+                        </Link>
                         <div className="text-wrapper">
                             <h2>{edge.node.name}</h2>
                             <p>{edge.node.position}</p>

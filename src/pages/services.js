@@ -15,12 +15,12 @@ import "../styles/_services.sass"
 const ServicesPage = () => {
     const data = useStaticQuery(graphql`
     query {
-        allContentfulServices(limit: 4){
+        allContentfulServices{
             edges {
                 node {
                     title
                     description 
-                        thumbnail {
+                        mainImage {
                             file {
                                 url
                                 }
@@ -39,7 +39,7 @@ const ServicesPage = () => {
                     <MediaBar />
                     {data.allContentfulServices.edges.map((edge, index) => {
                         return <div className="services-row">
-                            <img src={edge.node.thumbnail.file.url} />
+                            <img src={edge.node.mainImage.file.url} />
                             <div className="text-wrapper">
                                 <h1>{edge.node.title}</h1>
                                 <p>{edge.node.description}</p>

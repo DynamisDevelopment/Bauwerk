@@ -27,6 +27,7 @@ const BlogSlider = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 3,
+        lazyLoad: 'progressive',
         slidesToScroll: 3,
         adaptiveHeight: true,
         responsive: [
@@ -51,12 +52,12 @@ const BlogSlider = () => {
             <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
             <Slider {...settings} className="blog-slider">
                 {data.allContentfulBlog.edges.map((edge, index) => {
-                    return <a href={"blog/" + edge.node.slug} className="blog-col" key={index}>
-                        <img src={edge.node.thumbnail.file.url} />
+                    return <div className="blog-col" key={index}>
+                        <a href={"blog/" + edge.node.slug} ><img src={edge.node.thumbnail.file.url} /></a>
                         <p>{edge.node.createdAt}</p>
                         <h1>{edge.node.title}</h1>
                         <div className="read-more">Read more <img src="../Assets/images/arrow.svg" className="rarrow" /></div>
-                    </a>
+                    </div>
                 })}
             </Slider>
         </div>

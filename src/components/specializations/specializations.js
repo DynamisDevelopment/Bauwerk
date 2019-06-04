@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
 import SectionTitle from "../sectionTitle/sectionTitle"
 
@@ -23,8 +23,9 @@ const Specializations = () => {
     var settings = {
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 4,
+        lazyLoad: 'progressive',
         slidesToScroll: 4,
         responsive: [
             {
@@ -56,13 +57,13 @@ const Specializations = () => {
             <SectionTitle section={"Services"} title={"Our Professional"} subtitle={"Specializations"} />
             <Slider {...settings} className="services-slider">
                 {data.allContentfulServices.edges.map((edge, index) => {
-                    return <a href="/services" key={index} className="service-column">
-                        <img src={edge.node.thumbnail.file.url} />
+                    return <div key={index} className="service-column">
+                        <Link to='/services'><img src={edge.node.thumbnail.file.url} /></Link>
                         <div className="text-wrapper">
                             <h2>{edge.node.title}</h2>
                             <p>Read more <img src="../Assets/images/arrow.svg" /></p>
                         </div>
-                    </a>
+                    </div>
                 })}
             </Slider>
         </div>

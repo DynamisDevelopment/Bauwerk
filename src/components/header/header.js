@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import "../../styles/index.sass"
 
-const Header = () => {
+const Header = props => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -14,7 +14,7 @@ const Header = () => {
     `)
   return (
     <div className="grid">
-      <header className="grid">
+      <header className={props.name === "home" || props.over == true ? "is-over grid" : "not-over grid"}>
         <div className="contact-info">
           <div className="icons">
             <img src="../Assets/icons/smartphone.svg" alt="Phone Icon" />
@@ -53,7 +53,7 @@ const Header = () => {
           </ul>
         </nav>
       </header>
-    </div>
+    </div >
   )
 }
 

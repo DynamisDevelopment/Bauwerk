@@ -7,6 +7,7 @@ const Awards = props => {
         dots: false,
         infinite: true,
         speed: 500,
+        lazyLoad: 'progressive',
         slidesToShow: 4,
         slidesToScroll: 4,
         responsive: [

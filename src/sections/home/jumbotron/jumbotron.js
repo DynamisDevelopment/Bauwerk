@@ -1,14 +1,17 @@
 import React from 'react'
 import Slider from "react-slick"
-import MediaBar from "../../../components/mediaBar/mediaBar"
-const Jumbotron = () => {
+
+const Jumbotron = props => {
     var settings = {
         dots: true,
+        lazyLoad: true,
+        arrows: false,
         infinite: true,
-        speed: 500,
+        speed: 1200,
         slidesToShow: 1,
         slidesToScroll: 1
     }
+    console.log(props)
     return (
         <div className="jumbotron">
             <div className="jumbotron-info">
@@ -18,18 +21,11 @@ const Jumbotron = () => {
                 <button className="more-btn">View Portfolio <img src="./Assets/images/arrow-white.svg" /></button>
             </div>
             <Slider {...settings} className="jumbotron-slider">
-                <div>
-                    <img src="./Assets/images/header-background.png" />
-                </div>
-                <div>
-                    <img src="./Assets/images/header-background.png" />
-                </div>
-                <div>
-                    <img src="./Assets/images/header-background.png" />
-                </div>
-                <div>
-                    <img src="./Assets/images/header-background.png" />
-                </div>
+                {props.jumbotronImages.map((image, index) => {
+                    return <div key={index}>
+                        <img src={image.file.url} />
+                    </div>
+                })}
             </Slider>
         </div>
     )

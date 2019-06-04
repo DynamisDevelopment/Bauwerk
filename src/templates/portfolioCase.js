@@ -16,12 +16,13 @@ import "../styles/_project-template.sass"
 const PortfolioCase = () => {
     const data = useStaticQuery(graphql`
     query {
-        allContentfulProjects(filter: {slug: { eq: "smart-house" }}){
+        allContentfulProjects(filter: {slug: { eq: "large-house" }}){
             edges {
                 node {
                     name 
                     category 
                     createdAt(formatString: "MMMM Do, YYYY") 
+                    bgImage { file { url } }
                     sliderImages {
                         title
                         file { url }
@@ -53,7 +54,7 @@ const PortfolioCase = () => {
     const project = data.allContentfulProjects.edges[0].node
 
     var settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         infinite: true,
         speed: 500,
@@ -63,9 +64,10 @@ const PortfolioCase = () => {
     }
 
     return (
-        <Layout>
+        <Layout over={true}>
             <div className="grid">
-                <img src="../Assets/images/portfolio-bg.jpg" />
+                <img src={project.bgImage.file.url} className="project-bg" />
+                <div className="project-veil"></div>
                 <div className="portfolio-page">
                     <h4 className="path">Home / Blog list and news /  {project.name}</h4>
                     <SectionTitle section={"Portfolio"} title={""} subtitle={""} />
@@ -109,10 +111,10 @@ const PortfolioCase = () => {
                             <div className="content">{documentToReactComponents(project.bioSection2.json)}</div>
                         </div>
                     </div>
-                    {project.details.video == "#" ? <div className="project-video">
+                    {project.details.video == "#" && <div className="project-video">
                         <SectionTitle section={""} title={"Short Video"} subtitle={"Of the Project"} />
                         <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div> : ""}
+                    </div>}
                     {project.details.reviews[0] && <div className="project-review">
                         <SectionTitle section={""} title={"Customer"} subtitle={"feedback"} />
                         <div className="quote">

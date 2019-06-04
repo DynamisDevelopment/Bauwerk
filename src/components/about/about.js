@@ -55,7 +55,7 @@ const About = props => {
             </div>
             {props.sectionTwo && <div className="about-row-2">
                 <Slider {...settings} className="about-slider">
-                    {props.aboutImages.map((edge, index) => {
+                    {props.aboutImages2.map((edge, index) => {
                         return <div key={index}>
                             <img src={edge.file.url} />
                         </div>

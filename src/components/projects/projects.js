@@ -16,7 +16,7 @@ const Projects = props => {
     console.log(props)
     return (
         <div className="projects-section">
-            <SectionTitle section={"Portfolio"} title={"Our Latest"} subtitle={"Projects"} />
+            <SectionTitle section={"Portfolio"} title={props.whos + " Latest"} subtitle={"Projects"} />
             <div className="projects projects-grid">
                 {props.edges.map((edge, index) => {
                     return <a href={"projects/" + edge.node.slug} className="project" key={index}>

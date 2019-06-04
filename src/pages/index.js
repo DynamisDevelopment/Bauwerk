@@ -35,17 +35,11 @@ const IndexPage = () => {
             edges {
                 node {
                     name
-                    sectionOne {
-                        json
-                    }
-                    sectionTwo {
-                        json
-                    }
-                    aboutImages {
-                        file {
-                         url
-                        }
-                    }
+                    jumbotronImages { file { url } }
+                    sectionOne { json }
+                    sectionTwo { json }
+                    aboutImages { file { url } }
+                    aboutImages2 { file { url } }
                 }
             }
         }
@@ -82,14 +76,14 @@ const IndexPage = () => {
     }
     `)
     return (
-        <Layout>
+        <Layout page={data.allContentfulPages.edges[0].node}>
             <Head title="Home" />
             <div className="grid">
-                <Jumbotron />
+                <Jumbotron {...data.allContentfulPages.edges[0].node} />
                 <MediaBar />
                 <Offers />
                 <Specializations />
-                <Projects {...data.allContentfulProjects} />
+                <Projects {...data.allContentfulProjects} whos={"Our"} />
                 <Special />
                 <Reviews {...data.allContentfulReviews} />
                 <About {...data.allContentfulPages.edges[0].node} />

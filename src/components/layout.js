@@ -7,7 +7,7 @@ const Layout = (props) => {
     return (
         <div>
             <div>
-                <Header />
+                <Header {...props.page} over={props.over} />
                 {props.children}
             </div>
             <Footer />

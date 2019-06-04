@@ -17,11 +17,12 @@ import "../styles/_about-template.sass"
 const AboutMe = () => {
     const query = useStaticQuery(graphql`
     query {
-        allContentfulTeam(filter: {slug: { eq: "pablo" }}){
+        allContentfulTeam(filter: {slug: { eq: "webb" }}){
             edges {
                 node {
                     name
                     slug
+                    sideImage { file { url } }
                     sectionOne {
                         json
                     }
@@ -42,7 +43,7 @@ const AboutMe = () => {
                 }
             }
         }
-        allContentfulProjects(filter: {contributor: { elemMatch: { slug: { eq: "pablo"}} }}){
+        allContentfulProjects(filter: {contributor: { elemMatch: { slug: { eq: "webb"}} }} limit: 4){
             edges {
                 node {       
                     name 
@@ -55,7 +56,7 @@ const AboutMe = () => {
                 }
             }
         }
-        allContentfulReviews(filter: {reviewie: { elemMatch: { slug: { eq: "pablo"}} }}) {
+        allContentfulReviews(filter: {reviewie: { elemMatch: { slug: { eq: "webb"}} }}) {
             edges {
                 node {
                     createdAt(formatString: "MMMM Do, YYYY") 
@@ -80,7 +81,7 @@ const AboutMe = () => {
                 <About {...query.allContentfulTeam.edges[0].node} />
                 <MediaBar />
                 <div className="skills">
-                    <img src={query.allContentfulTeam.edges[0].node.aboutImages[0].file.url} className="skill-img" />
+                    <img src={query.allContentfulTeam.edges[0].node.sideImage.file.url} className="skill-img" />
                     <div className="skills-list">
                         <h1>My professional skills</h1>
                         <ul>

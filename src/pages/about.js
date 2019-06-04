@@ -35,6 +35,7 @@ const AboutPage = () => {
                          url
                         }
                     }
+                    aboutImages2 { file { url } }
                     awards {
                         title
                         file {

@@ -1,15 +1,22 @@
 
+.is-over 
+    background-color: transparent
+    span 
+        color: #fff 
+.not-over 
+    background-color: rgb(18, 18, 18) 
+    span 
+        color: grey
 header 
     // Layout
     grid-column: 1 / 5
     height: 120px
-    background-color: red
 
     // Typography
     color: #fff
 
     // Misc Styling
-    background-color: rgb(18, 18, 18)
+    z-index: 10
     .contact-info 
         // Layout
         grid-column: 2 / 3
@@ -23,9 +30,6 @@ header
 
         // Misc Styling
         border-bottom: .5px solid rgba(255, 255, 255, .3)
-        span 
-            // Typography
-            color: grey
         .icons 
             // Layout
             display: flex
