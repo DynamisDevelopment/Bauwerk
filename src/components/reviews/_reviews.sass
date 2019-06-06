@@ -3,13 +3,11 @@
 
 .reviews-slider 
     // Layout
-    height: 400px
     margin: 75px 0 100px 0
     display: flex
     justify-content: baseline
     .review-col 
         // Layout
-        height: 400px
         display: flex 
         flex-direction: column
         justify-content: space-between
@@ -18,12 +16,16 @@
         // Typography
         font-family: "Roboto"
         h2 
+            // Layout
+            margin-top: 30px !important
+
             // Typography
             margin-top: -50px
             line-height: 30px
             font-weight: 400
         .details 
             // Layout
+            margin-top: 30px
             display: flex
             justify-content: space-between
             width: 50%
@@ -53,3 +55,22 @@
         border-radius: 50%
     .slick-dots 
         display: none !important
+
+@media screen and (max-width: 1200px)
+    .review-col 
+        align-items: center 
+        h2 
+            text-align: center
+        .details 
+            align-self: flex-start
+@media screen and (max-width: 850px)
+    .review-col .details 
+        align-self: center
+@media screen and (max-width: 600px)
+    .reviews-slider
+        .review-col 
+            padding: 0 
+        h2 
+            width: 85vw
+        .slick-arrow
+            display: none !important

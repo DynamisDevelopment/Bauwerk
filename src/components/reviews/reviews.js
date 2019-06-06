@@ -29,15 +29,24 @@ const Reviews = props => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 2,
         lazyLoad: 'progressive',
-        slidesToScroll: 1,
-        adaptiveHeight: true
+        slidesToScroll: 2,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 850,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     }
     return (
         <div className="reviews-section">
             <SectionTitle section={"Testimonials"} title={"What"} subtitle={"Clients Say"} />
-            <Slider {...settings} slidesPerRow={2} className="reviews-slider">
+            <Slider {...settings} className="reviews-slider">
                 {props.edges.map((review, index) => {
                     return <div key={index}>
                         <div className="review-col">
