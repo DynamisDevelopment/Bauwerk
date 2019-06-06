@@ -24,7 +24,6 @@ const About = props => {
         slidesToScroll: 1,
         adaptiveHeight: true
     }
-    console.log(props)
     return (
         <div className="about-section grid">
             <img src="../Assets/images/about-bg.jpg" className="about-bg" />
@@ -49,10 +48,18 @@ const About = props => {
                     })}
                 </Slider>
             </div>
-            <div className="history">
-                <img src="../Assets/images/15Years.svg" className="years" />
-                <img src="../Assets/images/completedWorks.svg" className="completedWorks" />
-            </div>
+            {props.yearsOfWork & props.completedWorks && <div className="history">
+                <div className="years">
+                    <img src="../Assets/images/triangle.svg" alt="triangle" className="triangle" />
+                    <div className="num">{props.yearsOfWork}</div>
+                    <div className="type">years of professional work</div>
+                </div>
+                <div className="completedWorks">
+                    <img src="../Assets/images/square.svg" alt="square" className="square" />
+                    <div className="num">{props.completedWorks}</div>
+                    <div className="type">successfully completed works</div>
+                </div>
+            </div>}
             {props.sectionTwo && <div className="about-row-2">
                 <Slider {...settings} className="about-slider">
                     {props.aboutImages2.map((edge, index) => {

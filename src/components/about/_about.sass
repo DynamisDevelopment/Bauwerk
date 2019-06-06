@@ -14,15 +14,13 @@
     justify-content: space-around
     .about-slider img 
         height: auto
-        width: 100%
+        min-width: 600px
         height: auto
         max-height: 600px
     .about-column
         // Layout
         display: flex 
         flex-direction: column 
-        justify-content: space-between
-        height: 500px
         width: 40%
         .logo-area 
             img
@@ -34,6 +32,7 @@
                 font-size: 20px
         p
             // Layout
+            margin-top: 50px
             padding-top: 50px
             margin-left: 5%
 
@@ -43,20 +42,56 @@
         width: 40%
 .history 
     // Layout
+    margin-top: -1200px
     grid-column: 2 / 3
-    margin-top: -2200px
     display: flex 
     justify-content: space-around
     width: 100%
     padding-top: 100px
+
+    // Typography
+    font-family: "Playfair Display"
+    .triangle 
+        // Layout
+        position: absolute
+        margin-top: -200px
+        margin-left: -300px
+        min-width: 200px
+        width: 15%
+        height: auto
+        transform: rotate(-15deg)
+    .square 
+        @extend .triangle
+        margin-top: 0
+        margin-left: 0
+    .num 
+        // Layout
+        margin-right: -50px
+        margin-top: -200px
+        padding: absolute
+        z-index: 2
+
+        // Typography
+        color: rgb(51, 51, 51)
+        font-size: 30vmin
+    .type 
+        // Layout
+        width: 45%
+        z-index: 3
+
+        // Typography
+        font-size: 5vmin
     .years 
         // Layout
-        height: auto
+        display: flex
+        justify-content: center
+        height: 150px
         width: 50%
     .completedWorks
         // Layout
-        margin-top: 100px
-        height: auto
+        display: flex
+        justify-content: center
+        height: 150px
         width: 40%
 
 .about-row-2
@@ -74,20 +109,28 @@
             font-family: "Playfair Display"
             font-size: 30px
             font-weight: 600
-            
+
+
+
+@media screen and (max-width: 1225px)
+    .history
+        margin-top: -1100px
 @media screen and (max-width: 900px)
     .about-bg 
-        height: 2500px
+        height: 1600px
     .about-row 
         // Layout
         flex-direction: column
         align-items: center
         justify-content: space-between
-        margin-top: -2250px
+        margin-top: -1400px
         height: 900px
+        .about-slider 
+            display: none
         .about-column 
             // Layout
             width: 80%
+            height: 450px
 
             // Typography
             text-align: center
@@ -97,16 +140,29 @@
                 // Layout
                 align-self: center
     .history 
-        margin-top: -2500px
+        margin-top: -800px
     .about-row-2
         // Layout
-        height: 700px
-        margin-top: -1000px !important
-@media screen and (max-width: 600px)
+        height: 450px
+        margin-top: -550px !important
+@media screen and (max-width: 800px)
+    .about-bg 
+        height: 1400px
+    .about-row 
+        margin-top: -1200px    
+    .about-row-2 
+        margin-top: -650px !important
+    .history 
+        display: none
+@media screen and (max-width: 450px)
     .about-slider 
         width: 60vw !important
-@media screen and (max-width: 450px)
-    .about-column
-        height: 200% !important
-    .history 
-        // margin-top: -2200px
+    .about-bg 
+        height: 1500px
+    .about-row 
+        margin-top: -1300px
+        p 
+            // Layout
+            width: 90vw
+            margin-left: -20px !important
+    

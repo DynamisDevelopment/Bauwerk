@@ -40,6 +40,8 @@ const IndexPage = () => {
                     sectionTwo { json }
                     aboutImages { file { url } }
                     aboutImages2 { file { url } }
+                    yearsOfWork
+                    completedWorks
                 }
             }
         }
