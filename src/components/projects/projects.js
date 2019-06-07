@@ -21,18 +21,18 @@ const Projects = props => {
                 {props.edges.map((edge, index) => {
                     return <Link to={"projects/" + edge.node.slug} className="project" key={index}>
                         <img src={edge.node.thumbnail.file.url} />
-                        <div className="text-wrapper">
+                        <div className="projects-text-wrapper">
                             <p>{edge.node.category}</p>
                             <h1>{edge.node.name}</h1>
                         </div>
                     </Link>
                 })}
             </div>
-            <Slider {...settings} className="projects projects-slider">
+            <Slider {...settings} className="projects-slider">
                 {props.edges.map((edge, index) => {
-                    return <Link to={"projects/" + edge.node.slug} className="project" key={index}>
+                    return <Link to={"projects/" + edge.node.slug} key={index}>
                         <img src={edge.node.thumbnail.file.url} />
-                        <div className="text-wrapper">
+                        <div className="projects-text-wrapper">
                             <p>{edge.node.category}</p>
                             <h1>{edge.node.name}</h1>
                         </div>
