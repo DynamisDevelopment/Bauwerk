@@ -9,6 +9,7 @@ import BlogSlider from "../components/blogSlider/blogSlider"
 import Newsletter from "../components/newsletter/newsletter"
 import Contact from "../components/contact/contact"
 import Icons from "../components/socialIcons/socialIcons"
+import { DiscussionEmbed } from "disqus-react"
 
 // Styles 
 import "../styles/_project-template.sass"
@@ -18,6 +19,7 @@ export const projects = graphql`
         contentfulProjects(slug: { eq: $slug}){
             name 
             category 
+            slug
             createdAt(formatString: "MMMM Do, YYYY") 
             bgImage { file { url } }
             sliderImages {
@@ -48,6 +50,13 @@ export const projects = graphql`
     `
 const PortfolioCase = props => {
     const project = props.data.contentfulProjects
+
+    const post = props.data.contentfulBlog
+
+    const disqusConfig = {
+        shortname: process.env.GATSBY_DISQUS_NAME,
+        config: { identifier: project.slug },
+    }
 
     var settings = {
         dots: true,
@@ -124,6 +133,7 @@ const PortfolioCase = props => {
                 </div>
                 <MediaBar />
                 <BlogSlider />
+                <div className="comments"><DiscussionEmbed {...disqusConfig} /></div>
                 <Newsletter />
                 <Contact />
             </div>

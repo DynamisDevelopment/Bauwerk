@@ -8,6 +8,7 @@ import Slider from "react-slick"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Newsletter from "../components/newsletter/newsletter"
 import Icons from "../components/socialIcons/socialIcons"
+import { DiscussionEmbed } from "disqus-react"
 
 // Styles 
 import "../styles/_post-template.sass"
@@ -17,6 +18,7 @@ export const posts = graphql`
         contentfulBlog(slug: { eq: $slug}) {
             title 
             description 
+            slug
             createdAt(formatString: "MMMM Do, YYYY")
             mainImage { file { url } }
             images { file { url } }
@@ -26,8 +28,12 @@ export const posts = graphql`
     `
 
 const Post = props => {
-
     const post = props.data.contentfulBlog
+
+    const disqusConfig = {
+        shortname: process.env.GATSBY_DISQUS_NAME,
+        config: { identifier: post.slug },
+    }
 
     var settings = {
         dots: false,
@@ -63,6 +69,7 @@ const Post = props => {
                 <MediaBar />
                 <SectionTitle section={""} title={"Reltated Posts"} subtitle={""} />
                 <BlogSlider />
+                <div className="comments"><DiscussionEmbed {...disqusConfig} /></div>
                 <Newsletter />
             </div>
         </Layout>
