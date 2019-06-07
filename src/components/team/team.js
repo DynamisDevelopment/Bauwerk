@@ -47,10 +47,12 @@ const Team = () => {
                 }
             }, ,
             {
-                breakpoint: 800,
+                breakpoint: 700,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
                 }
             },
         ]

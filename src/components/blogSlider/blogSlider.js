@@ -50,7 +50,7 @@ const BlogSlider = () => {
         ]
     }
     return (
-        <div className="blog-section">
+        <div className="blog-component">
             <SectionTitle section={"Blog"} title={"Blog"} subtitle={"and News"} />
             <Slider {...settings} className="blog-slider">
                 {data.allContentfulBlog.edges.map((edge, index) => {
