@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from "react-slick"
-
+import { Link } from 'gatsby'
 const Jumbotron = props => {
     var settings = {
         dots: true,
@@ -8,6 +8,8 @@ const Jumbotron = props => {
         arrows: false,
         infinite: true,
         speed: 1200,
+        autoplaySpeed: 3000,
+        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1
     }
@@ -18,7 +20,7 @@ const Jumbotron = props => {
                 <h1>Architecture</h1>
                 <h1>and Interior Design</h1>
                 <h3>Professional buro with many years of experience, develop the most daring and audacious projects.</h3>
-                <button className="more-btn">View Portfolio <img src="./Assets/images/arrow-white.svg" /></button>
+                <Link to='/portfolio'><button className="more-btn">View Portfolio <img src="./Assets/images/arrow-white.svg" /></button></Link>
             </div>
             <Slider {...settings} className="jumbotron-slider">
                 {props.jumbotronImages.map((image, index) => {
