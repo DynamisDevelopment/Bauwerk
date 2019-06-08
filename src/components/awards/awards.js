@@ -6,9 +6,9 @@ const Awards = props => {
     var settings = {
         dots: false,
         infinite: true,
-        speed: 500,
-        lazyLoad: 'progressive',
+        speed: 1000,
         slidesToShow: 4,
+        lazyLoad: 'progressive',
         slidesToScroll: 4,
         responsive: [
             {
@@ -19,18 +19,20 @@ const Awards = props => {
                 }
             },
             {
-                breakpoint: 800,
+                breakpoint: 900,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                 }
             },
             {
-                breakpoint: 500,
+                breakpoint: 550,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    arrows: false
+                    arrows: false,
+                    rows: 2,
+                    dots: true
                 }
             },
         ]
@@ -42,8 +44,8 @@ const Awards = props => {
             <div className="awards">
                 <Slider {...settings} className="awards-slider">
                     {props.awards.map((edge, index) => {
-                        return <div className="award">
-                            <img src={edge.file.url} />
+                        return <div className="award-col">
+                            <div className="award"><img src={edge.file.url} /></div>
                             <h1>{edge.title}</h1>
                         </div>
                     })}

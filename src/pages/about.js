@@ -9,6 +9,7 @@ import Team from "../components/team/team"
 import Contact from "../components/contact/contact"
 import MediaBar from "../components/mediaBar/mediaBar"
 import Awards from "../components/awards/awards"
+import Partners from "../components/partners/partners"
 
 // Styles 
 import "../styles/_about.sass"
@@ -45,6 +46,13 @@ const AboutPage = () => {
                 }
             }
         }
+        allContentfulPartners {
+            edges {
+                node {
+                    clientLogos{ file { url } }
+                }
+            }
+        }
     }
     `)
     return (
@@ -55,6 +63,7 @@ const AboutPage = () => {
                 <MediaBar />
                 <Awards {...data.allContentfulPages.edges[0].node} whos={"Our"} />
                 <Specializations />
+                <Partners {...data.allContentfulPartners} />
                 <Team />
                 <Contact />
             </div>

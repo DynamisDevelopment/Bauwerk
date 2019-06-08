@@ -62,6 +62,7 @@ const Specializations = () => {
                         <div className="text-wrapper">
                             <h2>{edge.node.title}</h2>
                             <p>Read more <img src="../Assets/images/arrow.svg" /></p>
+                            <div className="space"></div>
                         </div>
                     </div>
                 })}
