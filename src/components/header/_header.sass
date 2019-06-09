@@ -42,13 +42,15 @@ header
                 // Misc Styling
                 height: 20px
                 width: 20px
-    nav 
+    nav
         // Layout
         grid-column: 2 / 3
         width: 100%
         display: flex
         justify-content: space-between
         align-items: center
+        .logo-area 
+            z-index: 11
         a   
             // Typography
             font-family: "Roboto"
@@ -68,4 +70,77 @@ header
                 padding-bottom: 5px
                 &:hover 
                     border-bottom: 1px solid #fff
+        .burger 
+            z-index: 11
+            img
+                margin-top: -10px
+                height: 30px
+                width: 30px
+                cursor: pointer
+                    
+                
+@media screen and (min-width: 901px)
+    .burger 
+        display: none 
+    header nav ul 
+        display: flex !important
+@media screen and (max-width: 900px)
+    header nav ul  
+        // Layout
+        justify-self: center
+        padding: 45px 0 15px 0
+        margin: 250px 0 0 -5%
+        width: 100vw !important
+        position: absolute
+        flex-direction: column
+        z-index: 10
+
+        // Misc Styling
+        background-color: rgba(0,0,0,.8)
+        border-bottom: 4px solid $copper
+
+        // Animation
+        animation: fadeIn .4s ease-in-out
+        li a 
+            // Layout
+            margin: 10px 0 10px 0
+            display: flex 
+            justify-content: center
+            width: 100vw
+            color: #fff
+
+            // Typography
+            font-weight: 400
+            &:hover 
+                border-bottom: none
+        li:hover 
+            // Misc Styling
+            background-color: rgba(0,0,0,.1)
+            border-bottom: 2px solid $copper
+
+            // Animation
+            transition: .2s ease-in-out
+        .burger img
+            z-index: 12 !important
+            
+@media screen and (max-width: 640px)
+    nav .logo-area, .burger 
+            margin: 0 15px 0 15px
+    .icons:nth-child(4)
+        display: none !important
+@media screen and (max-width: 500px)
+    header nav ul 
+        margin: 250px 0 0 -1%
+@media screen and (max-width: 450px)
+    .contact-info 
+        justify-content: center !important
+    .icons:nth-child(2)
+        display: none !important
+
+
+@keyframes fadeIn
+    0% 
+        opacity: 0 
+    100% 
+        opacity: 1
                      

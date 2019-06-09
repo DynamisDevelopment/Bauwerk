@@ -8,8 +8,6 @@ const Jumbotron = props => {
         arrows: false,
         infinite: true,
         speed: 1200,
-        autoplaySpeed: 3000,
-        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1
     }
