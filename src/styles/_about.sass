@@ -2,10 +2,22 @@
     .about-bg 
         display: none !important
     .about-row, .history, .logo-area
-        margin-top: -50px !important
         color: black !important
     .about-row-2
-        margin-top: 50px !important
         color: black !important
     .name 
         color: black
+
+@media screen and (min-width: 901px)
+    .about-page .about-row
+        margin-top: 0 !important
+    .about-page .about-row-2 
+        margin-top: 50px !important
+@media screen and (max-width: 900px)
+    .about-page .about-row
+        margin-top: -50px !important
+    .about-page .about-row-2 
+        margin-top: -450px !important
+@media screen and (max-width: 600px)
+    .about-page .about-row, .about-page .about-row-2
+        margin-bottom: 120px 
