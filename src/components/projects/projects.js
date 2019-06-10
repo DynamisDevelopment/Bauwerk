@@ -28,18 +28,6 @@ const Projects = props => {
                     </Link>
                 })}
             </div>
-            <Slider {...settings} className="projects-slider">
-                {props.edges.map((edge, index) => {
-                    return <Link to={"projects/" + edge.node.slug} key={index}>
-                        <img src={edge.node.thumbnail.file.url} />
-                        <div className="projects-text-wrapper">
-                            <p>{edge.node.category}</p>
-                            <h1>{edge.node.name}</h1>
-                        </div>
-                    </Link>
-                })}
-
-            </Slider>
             <button className="more-btn"><Link to="/portfolio">View all works <img src="../Assets/images/arrow-white.svg" /></Link></button>
         </div>
     )

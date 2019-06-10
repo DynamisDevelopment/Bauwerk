@@ -81,13 +81,6 @@ const IndexPage = () => {
                 }
             }
         }
-        allContentfulPartners {
-            edges {
-                node {
-                    clientLogos{ file { url } }
-                }
-            }
-        }
     }
     `)
 

@@ -53,18 +53,25 @@
     .more-btn 
         margin-top: 40px !important
         margin: auto
-        
-@media screen and (min-width: 776px)
-    .projects-slider 
-        display: none
+
 @media screen and (max-width: 775px)
     .projects-grid 
-        display: none !important
-    .projects-slider 
-        margin-top: 50px
-        width: 100vw !important
+        // Layout
+        width: 100vw
         display: flex !important
+        align-items: center
+        flex-direction: column
+        margin-left: -5vw 
         img 
-            width: 90% !important
-            height: auto
-            // margin: 0 auto 0 auto
+            width: 80vw !important
+            height: auto !important
+            min-height: 250px
+@media screen and (max-width: 500px)
+    .projects-grid 
+        margin-left: -1vw
+        .projects-text-wrapper
+            p 
+                font-size: 15px 
+            h1 
+                font-size: 1.5em
+

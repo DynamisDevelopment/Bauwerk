@@ -36,7 +36,7 @@ const Post = props => {
     }
 
     var settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         infinite: true,
         speed: 500,
@@ -46,8 +46,8 @@ const Post = props => {
     }
     return (
         <Layout>
-            <div className="grid">
-                <div className="blog-page">
+            <div className="grid blog-page">
+                <div className="blog-section">
                     <h4 className="path">Home / Blog list and news /  {post.title}</h4>
                     <SectionTitle section={"Blog"} title={""} subtitle={""} />
                     <h1 className="title">{post.title}</h1>
