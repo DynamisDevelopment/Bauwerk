@@ -69,7 +69,7 @@ class Header extends React.Component {
               <li><Link to='/about'>About</Link></li>
               <li><Link to='/contact'>Contact</Link></li>
             </ul>
-            <div onClick={this.showNav} className="burger"><img src="./Assets/icons/nav-burger.svg" alt="nav-burger" /></div>
+            <div onClick={this.showNav} className="burger"><img src="../Assets/icons/nav-burger.svg" alt="nav-burger" /></div>
           </nav>
         </header>
       </div>
