@@ -16,6 +16,7 @@ import About from "../components/about/about"
 import Reviews from "../components/reviews/reviews"
 import Team from "../components/team/team"
 import Partners from "../components/partners/partners"
+import Awards from "../components/awards/awards"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
 
@@ -41,6 +42,10 @@ const IndexPage = () => {
                     sectionTwo { json }
                     aboutImages { file { url } }
                     aboutImages2 { file { url } }
+                    awards {
+                        title 
+                        file { url }
+                    }
                     yearsOfWork
                     completedWorks
                 }
@@ -86,7 +91,7 @@ const IndexPage = () => {
     }
     `)
 
-
+    console.log(data.allContentfulPages.edges[0].node, "+++++++++++++++++++++++++")
     return (
         <Layout page={data.allContentfulPages.edges[0].node}>
             <Head title="Home" />
@@ -100,7 +105,7 @@ const IndexPage = () => {
                 <Reviews {...data.allContentfulReviews} />
                 <About {...data.allContentfulPages.edges[0].node} />
                 <Team />
-                <Partners {...data.allContentfulPartners} />
+                <Awards {...data.allContentfulPages.edges[0].node} />
                 <BlogSlider />
                 <Contact />
             </div>

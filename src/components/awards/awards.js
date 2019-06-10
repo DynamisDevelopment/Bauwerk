@@ -44,7 +44,7 @@ const Awards = props => {
             <div className="awards">
                 <Slider {...settings} className="awards-slider">
                     {props.awards.map((edge, index) => {
-                        return <div className="award-col">
+                        return <div className="award-col" key={index}>
                             <div className="award"><img src={edge.file.url} /></div>
                             <h1>{edge.title}</h1>
                         </div>
