@@ -19,10 +19,19 @@ const Awards = props => {
                 }
             },
             {
-                breakpoint: 900,
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 800,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    dots: true
                 }
             },
             {

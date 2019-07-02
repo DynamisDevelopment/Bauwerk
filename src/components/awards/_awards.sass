@@ -59,13 +59,17 @@
                     font-size: 25px
                     color: #fff
                 .award 
-                    height: 100% 
+                    height: 80% 
                     display: flex
                     justify-content: center
                     img 
                         // Layout
                         height: 40%
                         width: 60%
+
+@media screen and (max-width: 1000px)
+    .awards .slick-arrow 
+        display: none !important
 @media screen and (max-width: 550px)
     .awards 
         justify-content: center
@@ -75,5 +79,5 @@
             text-align: center
         .award img 
             height: 30% !important
-            width: 50% !important
+            width: 40% !important
         

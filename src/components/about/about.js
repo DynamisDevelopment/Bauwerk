@@ -22,7 +22,9 @@ const About = props => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 4500
     }
     return (
         <div className="about-section grid">
@@ -31,7 +33,7 @@ const About = props => {
             <div className="about-row">
                 <div className="about-column">
                     <Link to="/" className="logo-area">
-                        <img src="../Assets/icons/logo.png" />
+                        <img src="../Assets/icons/logo.svg" />
                         <div className="name">
                             <h1>{data.site.siteMetadata.title}</h1>
                             <h3>Architecture</h3>

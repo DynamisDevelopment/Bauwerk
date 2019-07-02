@@ -33,6 +33,7 @@ const Reviews = props => {
         lazyLoad: 'progressive',
         slidesToScroll: 2,
         adaptiveHeight: true,
+        // autoplay: true,
         responsive: [
             {
                 breakpoint: 850,

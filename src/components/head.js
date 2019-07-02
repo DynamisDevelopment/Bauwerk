@@ -14,7 +14,7 @@ const Head = ({ title }) => {
     `)
     return (
         <div>
-            <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
+            <Helmet title={`${title} | ${data.site.siteMetadata.title}`} link={{ rel: "icon", type: "image/svg", href: '../images/logo.svg' }} />
         </div>
     )
 }

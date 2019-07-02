@@ -30,6 +30,7 @@ const BlogSlider = () => {
         lazyLoad: 'progressive',
         slidesToScroll: 3,
         adaptiveHeight: true,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -43,8 +44,7 @@ const BlogSlider = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    arrows: false,
-                    dots: true
+                    arrows: false
                 }
             },
         ]

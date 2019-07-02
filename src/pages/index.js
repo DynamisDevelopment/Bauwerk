@@ -15,7 +15,6 @@ import Projects from "../components/projects/projects"
 import About from "../components/about/about"
 import Reviews from "../components/reviews/reviews"
 import Team from "../components/team/team"
-import Partners from "../components/partners/partners"
 import Awards from "../components/awards/awards"
 import BlogSlider from "../components/blogSlider/blogSlider"
 import Contact from "../components/contact/contact"
@@ -37,7 +36,6 @@ const IndexPage = () => {
             edges {
                 node {
                     name
-                    jumbotronImages { file { url } }
                     sectionOne { json }
                     sectionTwo { json }
                     aboutImages { file { url } }

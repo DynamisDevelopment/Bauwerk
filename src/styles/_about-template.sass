@@ -2,12 +2,12 @@
     // Layout
     margin-top: 75px
     grid-column: 2 / 3
-    width: 80%
     display: flex
-    justify-content: space-around
     img
         width: 40%
+        max-width: 350px
         height: auto
+        margin-right: 25px
     .skills-list 
         h1 
             // Layout
@@ -40,3 +40,34 @@
                     color: rgb(157,125,79)
                     font-size: 40px
                     margin-right: 15px
+
+
+@media screen and (max-width: 900px)
+    .skills 
+        margin-top: -300px
+
+@media screen and (max-width: 790px)
+    .skills 
+        // Layout
+        margin-top: -200px
+        width: 100%
+        flex-direction: column
+        align-items: center
+        img 
+            width: 50%
+            min-width: 200px
+            margin-bottom: 25px
+        .skills-list 
+            h1 
+                text-align: center
+
+@media screen and (max-width: 500px)
+    .skills-list ul 
+        height: auto !important
+        align-items: center
+
+@media screen and (max-width: 380px)
+    .skills 
+        margin-top: -140px !important
+
+            

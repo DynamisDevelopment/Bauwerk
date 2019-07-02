@@ -66,14 +66,14 @@ const Footer = () => {
             </footer>
             <div className="copyright">
                 <Link to="/" className="logo-area">
-                    <img src="../Assets/icons/logo.png" />
+                    <img src="../Assets/icons/logo.svg" />
                     <div className="name">
                         <h1>{data.site.siteMetadata.title}</h1>
                         <h3>Architecture</h3>
                         <h3>Buro</h3>
                     </div>
                 </Link>
-                <p>2019 All Rights Reserved</p>
+                <p>{new Date().getFullYear()} All Rights Reserved</p>
             </div>
         </div>
     )
