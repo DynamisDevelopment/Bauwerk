@@ -29,9 +29,9 @@ const About = props => {
     return (
         <div className="about-section grid">
             <picture>
-                <source media="(max-width: 500px)" srcset="./Assets/images/about-bg-sm.jpg" />
-                <source media="(max-width: 1200px)" srcset="./Assets/images/about-bg-m.jpg" />
-                <img src="../Assets/images/about-bg.jpg" className="about-bg" />
+                <source media="(max-width: 500px)" srcset="../../Assets/images/about-bg-sm.jpg" />
+                <source media="(max-width: 1200px)" srcset="../../Assets/images/about-bg-m.jpg" />
+                <img src="../../Assets/images/about-bg.jpg" className="about-bg" />
             </picture>
             <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
             <div className="about-row">
