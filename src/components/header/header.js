@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import "../../styles/index.sass"
-import ResponsiveMenu from 'react-responsive-navbar'
 
 
 class Header extends React.Component {
