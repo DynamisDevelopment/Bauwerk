@@ -82,6 +82,7 @@ const IndexPage = () => {
     }
     `)
 
+    console.log(data.allContentfulPages.edges[0].node, "+++++++++++++++++++++++++")
     return (
         <Layout page={data.allContentfulPages.edges[0].node}>
             <Head title="Home" />
