@@ -5,7 +5,11 @@ import Form from "../../../components/form/form"
 const Special = () => {
     return (
         <div className="special-offer grid">
-            <img src="./Assets/images/special-bg.jpg" className="special-bg" />
+            <picture>
+                <source media="(max-width: 500px)" srcset="./Assets/images/special-bg-sm.jpg" />
+                <source media="(max-width: 1200px)" srcset="./Assets/images/special-bg-m.jpg" />
+                <img src="./Assets/images/special-bg.jpg" alt="" className="special-bg" />
+            </picture>
             <SectionTitle section={"Special Offer"} title={"How to save 50%"} subtitle={"of money on repairs"} />
             <div className="offer-column">
                 <div className="details">

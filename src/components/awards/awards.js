@@ -48,7 +48,11 @@ const Awards = props => {
     }
     return (
         <div className="awards-section grid">
-            <img src="../Assets/images/awards-bg.png" className="awards-bg" />
+            <picture>
+                <source media="(max-width: 500px)" srcset="./Assets/images/bg-sm.jpg" />
+                <source media="(max-width: 1200px)" srcset="./Assets/images/bg-m.jpg" />
+                <img src="../Assets/images/bg.jpg" className="awards-bg" />
+            </picture>
             <SectionTitle section={"Timeline"} title={props.whos} subtitle={"Awards"} />
             <div className="awards">
                 <Slider {...settings} className="awards-slider">
