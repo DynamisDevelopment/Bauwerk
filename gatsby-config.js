@@ -5,6 +5,17 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-react-helmet',
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plgins: [
+                    'gatsby-remark-relative-images',
+                    'gatsby-remark-images'
+                ]
+            }
+        },
         {
             resolve: 'gatsby-source-contentful',
             options: {
