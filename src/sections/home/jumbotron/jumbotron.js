@@ -1,7 +1,8 @@
 import React from 'react'
 import Slider from "react-slick"
 import { Link } from 'gatsby'
-const Jumbotron = props => {
+
+const Jumbotron = () => {
     var settings = {
         dots: true,
         lazyLoad: true,
