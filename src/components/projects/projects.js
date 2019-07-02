@@ -1,7 +1,6 @@
 import React from 'react'
 import SectionTitle from "../sectionTitle/sectionTitle"
 import { Link } from "gatsby"
-import Slider from "react-slick"
 
 const Projects = props => {
     var settings = {
@@ -13,7 +12,6 @@ const Projects = props => {
         slidesPerRow: 1,
         slidesToScroll: 1
     }
-    console.log(props)
     return (
         <div className="projects-section">
             <SectionTitle section={"Portfolio"} title={props.whos + " Latest"} subtitle={"Projects"} />
