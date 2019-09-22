@@ -31,7 +31,6 @@ const Team = () => {
         slidesToShow: 4,
         lazyLoad: 'progressive',
         slidesToScroll: 4,
-        autoplay: true,
         responsive: [
             {
                 breakpoint: 1200,
@@ -52,7 +51,8 @@ const Team = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    arrows: false
+                    arrows: false,
+                    autoplay: true,
                 }
             },
         ]
