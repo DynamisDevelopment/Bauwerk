@@ -8,7 +8,8 @@ const Jumbotron = () => {
         lazyLoad: true,
         arrows: false,
         infinite: true,
-        speed: 1200,
+        autoplay: true,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1
     }
@@ -50,11 +51,3 @@ const Jumbotron = () => {
     )
 }
 export default Jumbotron
-
-// <img src="./Assets/images/jumbotron/pic2-lg.jpg" alt=""
-//                 srcset="./Assets/images/jumbotron/pic2-lg.jpg 300w,
-//                         ./Assets/images/jumbotron/pic1-m.jpg 500w,
-//                         ./Assets/images/jumbotron/pic1-lg.jpg 1000w"
-//                 sizes="(max-width: 320px) 280px,
-//                 (max-width: 480px) 440px,
-//                 800px" />
