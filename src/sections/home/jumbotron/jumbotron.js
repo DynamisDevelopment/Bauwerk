@@ -23,12 +23,6 @@ const Jumbotron = () => {
             </div>
             <Slider {...settings} className="jumbotron-slider">
                 <picture>
-                    <source media="(max-width: 450px)" srcset="./Assets/images/jumbotron/pic1-sm.jpg" />
-                    <source media="(max-width: 1000px)" srcset="./Assets/images/jumbotron/pic1-m.jpg" />
-                    <source media="(min-width: 1001px)" srcset="./Assets/images/jumbotron/pic1-lg.jpg" />
-                    <img src="../Assets/images/jumbotron/pic1-lg.jpg" alt="" />
-                </picture>
-                <picture>
                     <source media="(max-width: 450px)" srcset="./Assets/images/jumbotron/pic2-sm.jpg" />
                     <source media="(max-width: 1000px)" srcset="./Assets/images/jumbotron/pic2-m.jpg" />
                     <source media="(min-width: 1001px)" srcset="./Assets/images/jumbotron/pic2-lg.jpg" />
@@ -39,6 +33,12 @@ const Jumbotron = () => {
                     <source media="(max-width: 1000px)" srcset="./Assets/images/jumbotron/pic3-m.jpg" />
                     <source media="(min-width: 1001px)" srcset="./Assets/images/jumbotron/pic3-lg.jpg" />
                     <img src="..//Assets/images/jumbotron/pic3-lg.jpg" alt="" />
+                </picture>
+                <picture>
+                    <source media="(max-width: 450px)" srcset="./Assets/images/jumbotron/pic1-sm.jpg" />
+                    <source media="(max-width: 1000px)" srcset="./Assets/images/jumbotron/pic1-m.jpg" />
+                    <source media="(min-width: 1001px)" srcset="./Assets/images/jumbotron/pic1-lg.jpg" />
+                    <img src="../Assets/images/jumbotron/pic1-lg.jpg" alt="" />
                 </picture>
                 <picture>
                     <source media="(max-width: 450px)" srcset="./Assets/images/jumbotron/pic4-sm.jpg" />
