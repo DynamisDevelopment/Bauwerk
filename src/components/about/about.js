@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Slider from "react-slick"
 import SectionTitle from "../sectionTitle/sectionTitle"
-import Icons from "../socialIcons/socialIcons"
+import Img from 'gatsby-image'
 
 const About = props => {
     const data = useStaticQuery(graphql`
@@ -13,13 +13,20 @@ const About = props => {
           title
         }
       }
+      image: file(relativePath: {eq: "images/about-bg.jpg"}) {
+            childImageSharp {
+            fluid(quality: 70)  {
+                ...GatsbyImageSharpFluid
+            }
+            }
+        }
     }
     `)
     var settings = {
         dots: false,
         arrows: false,
         infinite: true,
-        speed: 500,
+        speed: 2500,
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: true,
@@ -28,11 +35,11 @@ const About = props => {
     }
     return (
         <div className="about-section grid">
-            <picture>
-                <source media="(max-width: 500px)" srcset="../../Assets/images/about-bg-sm.jpg" />
-                <source media="(max-width: 1200px)" srcset="../../Assets/images/about-bg-m.jpg" />
-                <img src="../../Assets/images/about-bg.jpg" className="about-bg" />
-            </picture>
+            <Img
+                fluid={data.image.childImageSharp.fluid}
+                fadeIn={true}
+                className='about-bg'
+            />
             <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />
             <div className="about-row">
                 <div className="about-column">

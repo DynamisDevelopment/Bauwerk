@@ -1,8 +1,22 @@
 import React from 'react'
 import Slider from "react-slick"
 import SectionTitle from "../sectionTitle/sectionTitle"
+import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Awards = props => {
+    const data = useStaticQuery(graphql`
+    query {
+        image: file(relativePath: {eq: "images/bg.jpg"}) {
+            childImageSharp {
+            fluid(quality: 100)  {
+                ...GatsbyImageSharpFluid
+            }
+            }
+        }
+}
+`)
+
     var settings = {
         dots: false,
         infinite: true,
@@ -48,11 +62,11 @@ const Awards = props => {
     }
     return (
         <div className="awards-section grid">
-            <picture>
-                <source media="(max-width: 500px)" srcset="./Assets/images/bg-sm.jpg" />
-                <source media="(max-width: 1200px)" srcset="./Assets/images/bg-m.jpg" />
-                <img src="../Assets/images/bg.jpg" className="awards-bg" />
-            </picture>
+            <Img
+                fluid={data.image.childImageSharp.fluid}
+                fadeIn={true}
+                className='awards-bg'
+            />
             <SectionTitle section={"Timeline"} title={props.whos} subtitle={"Awards"} />
             <div className="awards">
                 <Slider {...settings} className="awards-slider">

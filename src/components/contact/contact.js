@@ -2,15 +2,29 @@ import React from 'react'
 import "../../styles/index.sass"
 import SectionTitle from "../sectionTitle/sectionTitle"
 import Form from "../form/form"
+import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Contact = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        image: file(relativePath: {eq: "images/bg.jpg"}) {
+            childImageSharp {
+            fluid(quality: 80)  {
+                ...GatsbyImageSharpFluid
+            }
+            }
+        }
+}
+`)
+
     return (
         <div className="contact-section grid">
-            <picture>
-                <source media="(max-width: 500px)" srcset="../Assets/images/bg-sm.jpg" />
-                <source media="(max-width: 1200px)" srcset="../Assets/images/bg-m.jpg" />
-                <img src="../Assets/images/bg.jpg" className="contact-bg" />
-            </picture>
+            <Img
+                fluid={data.image.childImageSharp.fluid}
+                fadeIn={true}
+                className='contact-bg'
+            />
             <SectionTitle section={"Contact"} title={"Let's Start"} subtitle={"a New Project"} />
             <div className="contact-row">
                 <div className="info">

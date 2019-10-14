@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionTitle from "../sectionTitle/sectionTitle"
 import { Link } from "gatsby"
+import Img from 'gatsby-image'
 
 const Projects = props => {
     var settings = {
