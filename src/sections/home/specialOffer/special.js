@@ -10,7 +10,7 @@ const Special = () => {
         image: file(relativePath: {eq: "images/special-bg.jpg"}) {
             childImageSharp {
             fluid(quality: 70) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
             }
             }
         }
@@ -22,6 +22,7 @@ const Special = () => {
             <Img
                 fluid={data.image.childImageSharp.fluid}
                 fadeIn={true}
+                loading={'lazy'}
                 className='special-bg'
             />
             <SectionTitle section={"Special Offer"} title={"How to save 50%"} subtitle={"of money on repairs"} />
@@ -38,9 +39,3 @@ const Special = () => {
 }
 
 export default Special
-
-// <picture>
-//                 <source media="(max-width: 500px)" srcset="./Assets/images/special-bg-sm.jpg" />
-//                 <source media="(max-width: 1200px)" srcset="./Assets/images/special-bg-m.jpg" />
-//                 <img src="./Assets/images/special-bg.jpg" alt="" className="special-bg" />
-//             </picture>

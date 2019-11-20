@@ -10,7 +10,7 @@ const Awards = props => {
         image: file(relativePath: {eq: "images/bg.jpg"}) {
             childImageSharp {
             fluid(quality: 100)  {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
             }
             }
         }

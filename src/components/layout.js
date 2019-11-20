@@ -3,7 +3,7 @@ import Footer from "./footer/footer.js"
 import Header from "./header/header.js"
 import "../styles/index.sass"
 
-const Layout = (props) => {
+const Layout = props => {
     return (
         <div>
             <div>

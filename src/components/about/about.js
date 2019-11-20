@@ -15,8 +15,8 @@ const About = props => {
       }
       image: file(relativePath: {eq: "images/about-bg.jpg"}) {
             childImageSharp {
-            fluid(quality: 70)  {
-                ...GatsbyImageSharpFluid
+            fluid(quality: 80)  {
+                ...GatsbyImageSharpFluid_withWebp
             }
             }
         }
@@ -38,6 +38,7 @@ const About = props => {
             <Img
                 fluid={data.image.childImageSharp.fluid}
                 fadeIn={true}
+                loading={"lazy"}
                 className='about-bg'
             />
             <SectionTitle section={"About Us"} title={"Your Best"} subtitle={"Choice"} />

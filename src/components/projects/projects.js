@@ -4,15 +4,6 @@ import { Link } from "gatsby"
 import Img from 'gatsby-image'
 
 const Projects = props => {
-    var settings = {
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesPerRow: 1,
-        slidesToScroll: 1
-    }
     return (
         <div className="projects-section">
             <SectionTitle section={"Portfolio"} title={props.whos + " Latest"} subtitle={"Projects"} />
@@ -33,3 +24,4 @@ const Projects = props => {
 }
 
 export default Projects
+// <img src={edge.node.thumbnail.file.url} />

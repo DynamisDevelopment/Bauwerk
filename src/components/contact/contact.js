@@ -11,7 +11,7 @@ const Contact = () => {
         image: file(relativePath: {eq: "images/bg.jpg"}) {
             childImageSharp {
             fluid(quality: 80)  {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
             }
             }
         }
