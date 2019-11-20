@@ -24,4 +24,3 @@ const Projects = props => {
 }
 
 export default Projects
-// <img src={edge.node.thumbnail.file.url} />
