@@ -37,7 +37,7 @@
     "react-slick": "^0.24.0",
     "react-spring": "^8.0.20",
     "reset-css": "^4.0.1",
-    "sharp": "^0.23.0"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^0.1.11",
